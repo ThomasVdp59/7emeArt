@@ -1,0 +1,7 @@
+@use "variables.scss" as variables;
+
+body {
+  margin: 0 auto;
+  padding: 0;
+  background-color: variables.$background-black;
+}

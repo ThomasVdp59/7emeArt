@@ -1,0 +1,48 @@
+/* --------------------------------------------
+Variables
+---------------------------------------------*/
+
+/* 
+----------------Colors
+ */
+
+// Grayscale
+$black: #0d0d0d;
+$background-black: #141414;
+
+// Brand colors
+$red: #ff474e;
+$brand-main-color: $red;
+
+/* 
+----------------Fonts
+ */
+
+// Font Colors
+$font-color-white: #ffffff;
+$font-color-gray: #8c8c8c;
+
+// Font sizes
+$font-size-regular: 18px;
+$font-size-headings: 24px;
+
+// Family fonts
+$font-family-serif: "Playfair Display SC", serif;
+$font-family-sans-serif-text: "Roboto", sans-serif;
+$font-family-sans-serif-headings: "Roboto Condensed", sans-serif;
+
+/* 
+----------------Layouts
+ */
+
+// Small tablets and large smartphones (landscape view)
+$screen-sm-min: 576px;
+
+// Small tablets (portrait view)
+$screen-md-min: 768px;
+
+// Tablets and small desktops
+$screen-lg-min: 992px;
+
+// Large tablets and desktops
+$screen-xl-min: 1200px;

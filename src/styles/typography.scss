@@ -1,0 +1,33 @@
+@use "variables.scss" as variables;
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@700&family=Roboto+Condensed:wght@300;400;700&family=Roboto:wght@300;400;500;700&display=swap");
+
+/* --------------------------------------------
+Typography
+---------------------------------------------*/
+
+/* 
+----------------Layout
+*/
+
+html {
+  color: variables.$font-color-white;
+  font-size: variables.$font-size-regular;
+  font-family: variables.$font-family-sans-serif-text;
+}
+
+/* 
+----------------Elements
+*/
+
+// Headings
+h2 {
+  font-size: variables.$font-size-headings;
+  font-family: variables.$font-family-sans-serif-headings;
+  font-weight: bold;
+}
+
+// Miscellaneous
+a {
+  color: variables.$font-color-white;
+  text-decoration: none;
+}
