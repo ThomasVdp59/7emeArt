@@ -1,7 +1,16 @@
-import Hero from "../../components/layout/Hero/Hero.js";
+import Hero from "../../components/Hero/Hero.js";
+import Main from "../../components/Main/Main.js";
+import { useLocation } from "react-router-dom";
 
 const Home = () => {
-  return <Hero></Hero>;
+  const location = useLocation();
+
+  return (
+    <div>
+      <Hero></Hero>
+      <Main path={location.pathname}></Main>
+    </div>
+  );
 };
 
 export default Home;

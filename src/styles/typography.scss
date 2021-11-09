@@ -13,6 +13,7 @@ html {
   color: variables.$font-color-white;
   font-size: variables.$font-size-regular;
   font-family: variables.$font-family-sans-serif-text;
+  letter-spacing: variables.$font-letter-spacing;
 }
 
 /* 
@@ -32,6 +33,13 @@ h2 {
   font-size: variables.$font-size-headings;
   font-family: variables.$font-family-sans-serif-headings;
   font-weight: bold;
+  text-transform: uppercase;
+  margin: 100px 0;
+}
+
+h3 {
+  margin: 0;
+  font-weight: 500;
 }
 
 // Miscellaneous

@@ -1,6 +1,6 @@
 import React from "react";
-import HeaderNavbar from "../HeaderNavbar/HeaderNavbar";
-import HeaderSearchBar from "../HeaderSearchBar/HeaderSearchBar";
+import HeaderNavbar from "./HeaderNavbar/HeaderNavbar";
+import HeaderSearchBar from "./HeaderSearchBar/HeaderSearchBar";
 import styles from "./Header.module.scss";
 
 const Header = () => {

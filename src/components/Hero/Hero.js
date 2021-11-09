@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Hero.module.scss";
 import Header from "../Header/Header.js";
-import HeroMain from "../HeroMain/HeroMain";
+import HeroMain from "./HeroMain/HeroMain";
 
 const Hero = () => {
   return (

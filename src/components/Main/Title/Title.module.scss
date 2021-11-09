@@ -1,0 +1,16 @@
+@use "../../../styles/variables.scss" as variables;
+
+.container {
+  position: relative;
+
+  h2::after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 4px;
+    top: 45px;
+    left: 0;
+    margin-bottom: 45px;
+    background: variables.$brand-main-color;
+  }
+}
