@@ -4,4 +4,16 @@
   background: no-repeat url(../../../assets/images/herobackgroundexemple.png);
   background-position: center;
   background-size: cover;
+
+  &::before {
+    content: "";
+    width: 100vw;
+    height: 300px;
+    background-color: black;
+    position: absolute;
+    top: 0;
+    opacity: 0.50;
+    filter: blur(50px);
+    -webkit-filter: blur(50px);
+}
 }

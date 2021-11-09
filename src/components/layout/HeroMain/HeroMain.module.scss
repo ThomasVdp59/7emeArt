@@ -1,0 +1,50 @@
+@use "../../../styles/variables.scss" as variables;
+
+.container {
+  height: 250px;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  bottom: -20%;
+
+  h1:nth-child(1) {
+    font-size: variables.$font-size-regular;
+    font-family: variables.$font-family-sans-serif-text;
+    font-weight: 300;
+
+    span {
+      font-weight: bold;
+    }
+  }
+
+  h1:nth-child(2) {
+    position: relative;
+    left: -5px;
+  }
+
+  .cta {
+    display: flex;
+    width: 650px;
+    height: 68px;
+    justify-content: space-between;
+
+    span {
+      display: flex;
+      align-items: center;
+      height: inherit;
+      background-color: variables.$black;
+
+      a {
+        margin: 0 3rem;
+      }
+    }
+
+    span:nth-child(2) {
+      background-color: transparent;
+      border: 2px solid variables.$font-color-white;
+    }
+  }
+}

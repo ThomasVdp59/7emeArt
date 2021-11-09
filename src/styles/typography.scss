@@ -20,6 +20,14 @@ html {
 */
 
 // Headings
+h1 {
+  font-size: variables.$font-size-hero-heading;
+  font-family: variables.$font-family-sans-serif-headings;
+  font-weight: bold;
+  margin: 0;
+  text-transform: uppercase;
+}
+
 h2 {
   font-size: variables.$font-size-headings;
   font-family: variables.$font-family-sans-serif-headings;
@@ -30,4 +38,5 @@ h2 {
 a {
   color: variables.$font-color-white;
   text-decoration: none;
+  text-transform: uppercase;
 }
