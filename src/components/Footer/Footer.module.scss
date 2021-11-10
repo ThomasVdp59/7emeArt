@@ -1,0 +1,76 @@
+@use "../../styles/variables.scss" as variables;
+
+.container {
+  width: 80vw;
+  height: 400px;
+  background-color: variables.$black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 0 10%;
+  margin-top: 100px;
+
+  .footerMain {
+    height: 150px;
+    display: flex;
+    justify-content: space-between;
+
+    &Infos {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      &Brand {
+        font-family: variables.$font-family-serif;
+        font-weight: bold;
+        font-size: 20px;
+      }
+
+      &Desc {
+        font-size: variables.$font-size-footer;
+      }
+    }
+
+    &Nav {
+      display: flex;
+      justify-content: space-evenly;
+      width: 60%;
+
+      &Group {
+        &Links {
+          height: 150px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+        }
+
+        & span {
+          font-size: variables.$font-size-footer;
+        }
+      }
+    }
+  }
+
+  hr {
+    width: 100%;
+    height: 1px;
+    border: none;
+    background-color: variables.$font-color-gray;
+  }
+
+  .footerSub {
+    display: flex;
+    justify-content: space-between;
+
+    &Headings {
+      width: 500px;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  svg {
+    font-size: variables.$font-size-headings;
+    padding-right: 15px;
+  }
+}

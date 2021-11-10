@@ -15,15 +15,22 @@ const Main = (props) => {
           "Actualités films et séries"
         ]);
         break;
+      case "/news":
+        setSections([
+          "Actualités films et séries",
+          "Actualités films",
+          "Actualités séries"
+        ]);
+        break;
       default:
         console.log("No path found.");
     }
-  }, []);
+  }, [props.path]);
 
   return (
     <div className={styles.container}>
       {sections.map((section, index) => (
-        <MainSubsection key={index} title={section}></MainSubsection>
+        <MainSubsection key={index} title={section} />
       ))}
     </div>
   );

@@ -5,7 +5,7 @@ import { FiArrowLeftCircle, FiArrowRightCircle } from "react-icons/fi";
 import Glide from "@glidejs/glide";
 import { useEffect } from "react";
 
-const ItemsCarousel = (props) => {
+const ItemsCarousel = () => {
   useEffect(() => {
     const sliders = document.querySelectorAll(".glide");
     sliders.forEach((item) => {
@@ -27,35 +27,35 @@ const ItemsCarousel = (props) => {
         <ul className="glide__slides">
           <li className="glide__slide">
             {" "}
-            <Item></Item>
+            <Item />
           </li>
           <li className="glide__slide">
             {" "}
-            <Item></Item>
+            <Item />
           </li>
           <li className="glide__slide">
             {" "}
-            <Item></Item>
+            <Item />
           </li>
           <li className="glide__slide">
             {" "}
-            <Item></Item>
+            <Item />
           </li>
           <li className="glide__slide">
             {" "}
-            <Item></Item>
+            <Item />
           </li>
           <li className="glide__slide">
             {" "}
-            <Item></Item>
+            <Item />
           </li>
           <li className="glide__slide">
             {" "}
-            <Item></Item>
+            <Item />
           </li>
           <li className="glide__slide">
             {" "}
-            <Item></Item>
+            <Item />
           </li>
         </ul>
       </div>

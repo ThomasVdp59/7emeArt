@@ -6,8 +6,8 @@ import HeroMain from "./HeroMain/HeroMain";
 const Hero = () => {
   return (
     <div className={styles.container}>
-      <Header></Header>
-      <HeroMain></HeroMain>
+      <Header/>
+      <HeroMain/>
     </div>
   );
 };

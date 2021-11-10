@@ -42,6 +42,24 @@ h3 {
   font-weight: 500;
 }
 
+h3 + span {
+  color: variables.$font-color-gray;
+}
+
+h4 {
+  margin: 0;
+  font-weight: bold;
+  font-family: variables.$font-family-sans-serif-headings;
+  font-size: variables.$font-size-footer-headings;
+}
+
+h5 {
+  display: inline-block;
+  margin: 0;
+  font-weight: normal;
+  font-size: variables.$font-size-footer;
+}
+
 // Miscellaneous
 a {
   color: variables.$font-color-white;
