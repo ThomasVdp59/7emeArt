@@ -2,16 +2,17 @@ import Hero from "../components/Hero/Hero.js";
 import Main from "../components/Main/Main.js";
 import Footer from "../components/Footer/Footer.js";
 import { useLocation } from "react-router-dom";
+import { PathContext } from "../components/Contexts/PathContext";
 
 const News = () => {
   const location = useLocation();
 
   return (
-    <div>
+    <PathContext.Provider value={location}>
       <Hero />
-      <Main path={location.pathname} />
+      <Main />
       <Footer />
-    </div>
+    </PathContext.Provider>
   );
 };
 

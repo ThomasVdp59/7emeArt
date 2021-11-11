@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
-import styles from "./NewsList.module.scss";
-import NewsItem from "./NewsItem/NewsItem.js";
+import styles from "./ItemsList.module.scss";
+import Item from "../Item/Item.js";
 import ReactPaginate from "react-paginate";
 
-const NewsList = (props) => {
+const ItemsList = (props) => {
   const itemsToShow = [
     1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 1, 2, 3, 4, 5, 6, 7, 8, 9,
     10, 11, 12, 13, 14, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 1, 2, 3,
     4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14
   ];
-  const numberOfItemsOnPage = 6;
+  const numberOfItemsOnPage = props.listType === "Top" ? 18 : 6;
   const [news, setNews] = useState([]);
   const [pageCount, setPageCount] = useState(0);
   // Here we use item offsets; we could also use page offsets
@@ -37,7 +37,7 @@ const NewsList = (props) => {
     <div className={styles.container}>
       <div className={styles.newsContainer}>
         {news.map((section, index) => (
-          <NewsItem id={index} />
+          <Item key={index} type={props.listType} />
         ))}
       </div>
       <ReactPaginate
@@ -54,4 +54,4 @@ const NewsList = (props) => {
   );
 };
 
-export default NewsList;
+export default ItemsList;

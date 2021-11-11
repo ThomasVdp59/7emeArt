@@ -1,18 +1,34 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import styles from "./Main.module.scss";
 import MainSubsection from "./MainSubsection/MainSubsection";
+import { PathContext } from "../Contexts/PathContext";
 
 const Main = (props) => {
   const [sections, setSections] = useState([]);
+  const { pathname } = useContext(PathContext);
 
   useEffect(() => {
-    const path = props.path;
-    switch (path) {
+    switch (pathname) {
       case "/":
         setSections([
           "Actuellement au cinéma",
           "Prochaines sorties",
           "Actualités films et séries"
+        ]);
+        break;
+      case "/films":
+        setSections([
+          "Films les plus populaires",
+          "Top 250 films",
+          "Box-office",
+          "Actualités films"
+        ]);
+        break;
+      case "/series":
+        setSections([
+          "Séries les plus populaires",
+          "Top 250 séries",
+          "Actualités séries"
         ]);
         break;
       case "/news":

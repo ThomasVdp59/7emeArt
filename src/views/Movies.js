@@ -4,7 +4,7 @@ import Footer from "../components/Footer/Footer.js";
 import { useLocation } from "react-router-dom";
 import { PathContext } from "../components/Contexts/PathContext";
 
-const Home = () => {
+const Movies = () => {
   const location = useLocation();
 
   return (
@@ -16,4 +16,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Movies;

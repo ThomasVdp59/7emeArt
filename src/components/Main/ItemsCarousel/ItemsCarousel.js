@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./ItemsCarousel.module.scss";
-import Item from "./Item/Item";
+import Item from "../Item/Item";
 import { FiArrowLeftCircle, FiArrowRightCircle } from "react-icons/fi";
 import Glide from "@glidejs/glide";
 import { useEffect } from "react";
@@ -27,35 +27,35 @@ const ItemsCarousel = () => {
         <ul className="glide__slides">
           <li className="glide__slide">
             {" "}
-            <Item />
+            <Item type="Top" />
           </li>
           <li className="glide__slide">
             {" "}
-            <Item />
+            <Item type="Top" />
           </li>
           <li className="glide__slide">
             {" "}
-            <Item />
+            <Item type="Top" />
           </li>
           <li className="glide__slide">
             {" "}
-            <Item />
+            <Item type="Top" />
           </li>
           <li className="glide__slide">
             {" "}
-            <Item />
+            <Item type="Top" />
           </li>
           <li className="glide__slide">
             {" "}
-            <Item />
+            <Item type="Top" />
           </li>
           <li className="glide__slide">
             {" "}
-            <Item />
+            <Item type="Top" />
           </li>
           <li className="glide__slide">
             {" "}
-            <Item />
+            <Item type="Top" />
           </li>
         </ul>
       </div>
