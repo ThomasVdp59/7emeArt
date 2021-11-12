@@ -18,9 +18,9 @@ const ItemsList = (props) => {
 
   useEffect(() => {
     const endOffset = itemOffset + numberOfItemsOnPage;
-    console.log(`Loading items from ${itemOffset} to ${endOffset}`);
     setNews(itemsToShow.slice(itemOffset, endOffset));
     setPageCount(Math.ceil(itemsToShow.length / numberOfItemsOnPage));
+        // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [itemOffset]);
 
   // Invoke when user click to request another page.

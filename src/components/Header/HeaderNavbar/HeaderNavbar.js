@@ -19,6 +19,9 @@ const HeaderNavbar = () => {
       <Link className={styles.linkText} to="/news">
         News
       </Link>
+      <Link className={styles.linkText} to={`/details/mulan`}>
+        Film RAndom
+      </Link>
     </div>
   );
 };

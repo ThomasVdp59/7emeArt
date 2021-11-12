@@ -27,35 +27,35 @@ const ItemsCarousel = () => {
         <ul className="glide__slides">
           <li className="glide__slide">
             {" "}
-            <Item type="Top" />
+            <Item type="Slide" />
           </li>
           <li className="glide__slide">
             {" "}
-            <Item type="Top" />
+            <Item type="Slide" />
           </li>
           <li className="glide__slide">
             {" "}
-            <Item type="Top" />
+            <Item type="Slide" />
           </li>
           <li className="glide__slide">
             {" "}
-            <Item type="Top" />
+            <Item type="Slide" />
           </li>
           <li className="glide__slide">
             {" "}
-            <Item type="Top" />
+            <Item type="Slide" />
           </li>
           <li className="glide__slide">
             {" "}
-            <Item type="Top" />
+            <Item type="Slide" />
           </li>
           <li className="glide__slide">
             {" "}
-            <Item type="Top" />
+            <Item type="Slide" />
           </li>
           <li className="glide__slide">
             {" "}
-            <Item type="Top" />
+            <Item type="Slide" />
           </li>
         </ul>
       </div>

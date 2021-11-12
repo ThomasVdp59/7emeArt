@@ -6,45 +6,130 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   position: relative;
-  bottom: -20%;
+  flex-grow: 1;
+  z-index: 1;
 
-  h1:nth-child(1) {
+  h1 {
+    position: relative;
+    left: -5px;
+
+    & + strong {
+      text-transform: initial;
+      font-family: variables.$font-family-sans-serif-text;
+      margin: 10px 0;
+
+      span {
+        color: variables.$brand-main-color;
+        font-weight: 300;
+      }
+    }
+  }
+
+  strong {
     font-size: variables.$font-size-regular;
     font-family: variables.$font-family-sans-serif-text;
     font-weight: 300;
+    text-transform: uppercase;
+    margin: 25px 0;
+    z-index: 1;
 
     span {
       font-weight: bold;
     }
   }
 
-  h1:nth-child(2) {
-    position: relative;
-    left: -5px;
+  ul {
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+
+    li {
+      color: variables.$font-color-gray;
+      font-family: variables.$font-family-sans-serif-headings;
+      font-weight: 500;
+      padding: 2px 0;
+
+      span {
+        color: variables.$font-color-white;
+        font-weight: 700;
+      }
+    }
+  }
+
+  p {
+    width: 720px;
+    z-index: 1;
   }
 
   .cta {
     display: flex;
-    width: 650px;
-    height: 68px;
+    width: 600px;
     justify-content: space-between;
+    align-items: center;
+    margin-top: 25px;
+    z-index: 1;
 
-    span {
+    button {
+      border: none;
       display: flex;
       align-items: center;
-      height: inherit;
-      background-color: variables.$black;
-
-      a {
-        margin: 0 3rem;
-      }
+      height: 68px;
+      padding: 0 3rem;
     }
 
-    span:nth-child(2) {
+    .details {
+      background-color: variables.$black;
+    }
+
+    .trailer {
       background-color: transparent;
       border: 2px solid variables.$font-color-white;
     }
   }
+}
+
+.detailsContainer {
+  justify-content: start;
+  &::before {
+    content: "";
+    width: 1250px;
+    top: -30px;
+    left: -20vw;
+    height: 100vh;
+    background-color: black;
+    position: absolute;
+    opacity: 0.6;
+    filter: blur(50px);
+    -webkit-filter: blur(50px);
+}
+}
+
+.modal {
+  width: auto;
+  height: auto;
+  display: inline-block;
+  z-index: 10;
+
+  iframe {
+    width: 1000px;
+    height: 563px;
+    border: none;
+  }
+}
+
+.modalOverlay {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba($color: #000000, $alpha: 0.95);
+  z-index: 10;
 }

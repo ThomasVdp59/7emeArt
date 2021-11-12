@@ -7,7 +7,6 @@ import { SiTwitter } from "react-icons/si";
 const Footer = () => {
   const author = "Thomas Vanderplancke";
   const year = new Date().getFullYear();
-  console.log(year);
 
   return (
     <footer className={styles.container}>

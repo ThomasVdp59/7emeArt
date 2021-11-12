@@ -4,6 +4,9 @@
   background: no-repeat url(../../assets/images/herobackgroundexemple.png);
   background-position: center;
   background-size: cover;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 
   &::before {
     content: "";
@@ -12,8 +15,23 @@
     background-color: black;
     position: absolute;
     top: 0;
-    opacity: 0.50;
+    opacity: 0.5;
     filter: blur(50px);
     -webkit-filter: blur(50px);
+  }
 }
+
+.detailsContainer {
+  &::before {
+    content: "";
+    width: 110vw;
+    height: 299px;
+    background-color: black;
+    position: absolute;
+    left: -10vw;
+    top: -65px;
+    opacity: 0.6;
+    filter: blur(50 px);
+    -webkit-filter: blur(50 px);
+  }
 }

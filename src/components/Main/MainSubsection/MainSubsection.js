@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./MainSubsection.module.scss";
 import Title from "../Title/Title";
 import ItemsCarousel from "../ItemsCarousel/ItemsCarousel";
+import BoxOfficeMovies from "../BoxOfficeMovies/BoxOfficeMovies";
 import ItemsList from "../ItemsList/ItemsList";
 
 const MainSubsection = (props) => {
@@ -24,10 +25,14 @@ const MainSubsection = (props) => {
             return <ItemsCarousel />;
           case "Prochaines sorties":
             return <ItemsCarousel />;
+          case "Films similaires":
+            return <ItemsCarousel />;
           case "Top 250 films":
             return <ItemsList listType="Top" />;
           case "Top 250 séries":
             return <ItemsList listType="Top" />;
+          case "Box-office de la semaine":
+            return <BoxOfficeMovies />;
           default:
             console.log("No props.title found.");
             break;

@@ -1,3 +1,5 @@
+@use "../../../styles/variables.scss" as variables;
+
 .container {
   width: 280px;
   height: 380px;
@@ -32,6 +34,18 @@
   -moz-border-radius: 15px;
   -ms-border-radius: 15px;
   -o-border-radius: 15px;
+
+  .rank {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    top: -115px;
+    color: variables.$black;
+    background: variables.$white;
+  }
 
   .textContainer {
     height: 100px;

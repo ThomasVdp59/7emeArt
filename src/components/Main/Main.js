@@ -8,40 +8,48 @@ const Main = (props) => {
   const { pathname } = useContext(PathContext);
 
   useEffect(() => {
-    switch (pathname) {
-      case "/":
+    switch (true) {
+      case pathname.startsWith("/") && pathname.length === 1:
         setSections([
           "Actuellement au cinéma",
           "Prochaines sorties",
           "Actualités films et séries"
         ]);
         break;
-      case "/films":
+      case pathname.startsWith("/films"):
         setSections([
           "Films les plus populaires",
           "Top 250 films",
-          "Box-office",
+          "Box-office de la semaine",
           "Actualités films"
         ]);
         break;
-      case "/series":
+      case pathname.startsWith("/series"):
         setSections([
           "Séries les plus populaires",
           "Top 250 séries",
           "Actualités séries"
         ]);
         break;
-      case "/news":
+      case pathname.startsWith("/news"):
         setSections([
           "Actualités films et séries",
           "Actualités films",
           "Actualités séries"
         ]);
         break;
+      case pathname.startsWith("/details"):
+        setSections([
+          "Acteurs principaux",
+          "Box-Office/Récompenses",
+          "Images",
+          "Films similaires"
+        ]);
+        break;
       default:
         console.log("No path found.");
     }
-  }, [props.path]);
+  }, [pathname]);
 
   return (
     <div className={styles.container}>
