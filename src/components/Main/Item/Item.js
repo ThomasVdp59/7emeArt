@@ -2,24 +2,6 @@ import React from "react";
 import styles from "./Item.module.scss";
 import img from "../../../assets/images/newsexemple.png";
 
-/* const Item = (props) => {
-  return (
-    <div
-      className={props.type === "Top" ? styles.containerTop : styles.container}
-    >
-      {props.type === "News" && <img src={img} alt="newsThumbnail" />}
-      <div className={styles.textContainer}>
-        <h3>
-          {props.type === "Top"
-            ? "Mulan"
-            : "Spawn : le projet maudit bouge encore et a trouvé son nouveau scénariste"}
-        </h3>
-        <span>par Niki Caro</span>
-      </div>
-    </div>
-  );
-}; */
-
 const Item = (props) => {
   if (props.type === "Top" || props.type === "Slide") {
     return (

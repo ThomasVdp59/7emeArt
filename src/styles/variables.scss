@@ -24,11 +24,11 @@ $font-color-white: #ffffff;
 $font-color-gray: #8c8c8c;
 
 // Font sizes
-$font-size-regular: 16px;
-$font-size-headings: 22px;
-$font-size-hero-heading: 90px;
-$font-size-footer-headings: 18px;
-$font-size-footer: 14px;
+$font-size-regular: 1rem;
+$font-size-headings: 1.375rem;
+$font-size-hero-heading: 5.625rem;
+$font-size-footer-headings: 1.125rem;
+$font-size-footer: 0.875rem;
 
 // Family fonts
 $font-family-serif: "Playfair Display SC", serif;
@@ -36,8 +36,8 @@ $font-family-sans-serif-text: "Roboto", sans-serif;
 $font-family-sans-serif-headings: "Roboto Condensed", sans-serif;
 
 // Family fonts
-$font-letter-spacing: 1.5px;
-$font-letter-spacing-reset: 1px;
+$font-letter-spacing: 0.094rem;
+$font-letter-spacing-reset: 0.063rem;
 
 /* 
 ----------------Layouts

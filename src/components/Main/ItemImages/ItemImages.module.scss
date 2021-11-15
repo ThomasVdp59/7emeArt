@@ -1,0 +1,44 @@
+@use "../../../styles/variables.scss" as variables;
+
+.container {
+  display: flex;
+  font-size: 0;
+  column-gap: 4px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  .otherimages {
+    column-gap: 4px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .imageLight {
+    width: initial;
+    height: initial;
+    filter: brightness(0.45);
+    -webkit-filter: brightness(0.45);
+  }
+
+  & .mainImage .image {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+    margin-right: 4px;
+  }
+
+  img {
+    font-size: 0;
+    width: 149px;
+    height: 149px;
+    object-fit: cover;
+    object-position: center;
+    transition: 0.4s;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+  }
+}

@@ -1,6 +1,5 @@
 @use "variables.scss" as variables;
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@700&family=Roboto+Condensed:wght@300;400;700&family=Roboto:wght@300;400;500;700&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@700&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,400&family=Roboto:wght@300;400;500;700&display=swap");
 /* --------------------------------------------
 Typography
 ---------------------------------------------*/
@@ -29,7 +28,8 @@ h1 {
   text-transform: uppercase;
 }
 
-h2 {
+h2,
+figcaption {
   font-size: variables.$font-size-headings;
   font-family: variables.$font-family-sans-serif-headings;
   font-weight: bold;
@@ -69,4 +69,21 @@ button {
   letter-spacing: variables.$font-letter-spacing;
   text-decoration: none;
   text-transform: uppercase;
+}
+
+figcaption {
+  text-transform: initial;
+
+  span {
+    color: variables.$font-color-gray;
+    font-size: variables.$font-size-footer-headings;
+    font-family: variables.$font-family-sans-serif-text;
+    font-weight: normal;
+    text-transform: initial;
+  }
+}
+
+ul {
+  list-style: none;
+  padding: 0;
 }

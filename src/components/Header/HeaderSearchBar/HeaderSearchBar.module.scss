@@ -23,6 +23,7 @@
       outline: none !important;
     }
     &::placeholder {
+      opacity: 1;
       color: variables.$font-color-white;
     }
   }

@@ -4,11 +4,17 @@ import Title from "../Title/Title";
 import ItemsCarousel from "../ItemsCarousel/ItemsCarousel";
 import BoxOfficeMovies from "../BoxOfficeMovies/BoxOfficeMovies";
 import ItemsList from "../ItemsList/ItemsList";
+import ActorsList from "../ActorsList/ActorsList";
+import Rewards from "../Rewards/Rewards";
+import BoxOfficeItem from "../BoxOfficeItem/BoxOfficeItem";
+import ItemImages from "../ItemImages/ItemImages";
 
 const MainSubsection = (props) => {
   return (
     <div className={styles.container}>
-      <Title value={props.title}></Title>
+      {props.title !== "Box-Office/Récompenses" && (
+        <Title value={props.title}></Title>
+      )}
       {(() => {
         switch (props.title) {
           case "Actualités films et séries":
@@ -33,6 +39,23 @@ const MainSubsection = (props) => {
             return <ItemsList listType="Top" />;
           case "Box-office de la semaine":
             return <BoxOfficeMovies />;
+          case "Acteurs principaux":
+            return <ActorsList />;
+          case "Box-Office/Récompenses":
+            return (
+              <div className={styles.boxOfficeAndRewards}>
+                <section>
+                  <Title value="Box-Office"></Title>
+                  <BoxOfficeItem />
+                </section>
+                <section>
+                  <Title value="Récompenses"></Title>
+                  <Rewards />
+                </section>
+              </div>
+            );
+          case "Images":
+            return <ItemImages />;
           default:
             console.log("No props.title found.");
             break;
