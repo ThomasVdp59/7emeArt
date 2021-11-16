@@ -1,14 +1,19 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import styles from "./HeroMain.module.scss";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { PathContext } from "../../Contexts/PathContext";
 import Modal from "react-modal";
+import axios from "axios";
 
-const HeroMain = () => {
-  const [modalIsOpen, setIsOpen] = React.useState(false);
+const HeroMain = (props) => {
+  const [modalIsOpen, setIsOpen] = useState(false);
   const { pathname } = useContext(PathContext);
   let { itemId } = useParams();
+  const date = new Date(Date.parse(props.data.releaseDate)).toLocaleDateString(
+    undefined,
+    { month: "long", day: "numeric" }
+  );
 
   const openModal = () => {
     setIsOpen(!modalIsOpen);
@@ -63,23 +68,26 @@ const HeroMain = () => {
           className={styles.modal}
           overlayClassName={styles.modalOverlay}
         >
-          <iframe title="Youtube trailer" src="https://www.youtube.com/embed/KK8FHdFluOQ?autoplay=1&mute=0"></iframe>
+          <iframe
+            title="Youtube trailer"
+            src="https://www.youtube.com/embed/KK8FHdFluOQ?autoplay=1&mute=0"
+          ></iframe>
         </Modal>
       </div>
     );
   } else {
-    return (
+    return (props.data.id != null && (
       <div className={styles.container}>
         {(pathname === "/" || pathname === "/news") && (
           <strong>
-            Sortie prévue <span>le 24 décembre</span>
+            Sortie prévue le <span>{date}</span>
           </strong>
         )}
 
         {pathname === "/films" && <strong>Le film du moment</strong>}
         {pathname === "/series" && <strong>La série du moment</strong>}
 
-        <h1>Mulan</h1>
+        <h1>{props.data.title}</h1>
         <div className={styles.cta}>
           <button className={styles.details}>
             <Link to="/">Plus de détails</Link>
@@ -90,7 +98,7 @@ const HeroMain = () => {
           </button>
         </div>
       </div>
-    );
+    ): "");
   }
 };
 

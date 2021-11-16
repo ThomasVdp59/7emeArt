@@ -1,0 +1,393 @@
+{
+  "items": [
+    {
+      "id": "tt11214590",
+      "title": "House of Gucci",
+      "fullTitle": "House of Gucci (2021)",
+      "year": "2021",
+      "releaseState": "November 26",
+      "image": "https://m.media-amazon.com/images/M/MV5BZThjMTA5YjgtZmViZi00YjY0LTk5MzQtMjUwMGEzZGVlYzFjXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_UX128_CR0,4,128,176_AL_.jpg",
+      "runtimeMins": "157",
+      "runtimeStr": "2h 37mins",
+      "plot": "When Patrizia Reggiani, an outsider from humble beginnings, marries into the Gucci family, her unbridled ambition begins to unravel their legacy and triggers a reckless spiral of betrayal, decadence, revenge, and ultimately...murder.",
+      "contentRating": "R",
+      "imDbRating": "",
+      "imDbRatingCount": "",
+      "metacriticRating": "",
+      "genres": "Crime, Drama, Thriller",
+      "genreList": [
+        {
+          "key": "Crime",
+          "value": "Crime"
+        },
+        {
+          "key": "Drama",
+          "value": "Drama"
+        },
+        {
+          "key": "Thriller",
+          "value": "Thriller"
+        }
+      ],
+      "directors": "Ridley Scott",
+      "directorList": [
+        {
+          "id": "nm0000631",
+          "name": "Ridley Scott"
+        }
+      ],
+      "stars": "Salma Hayek, Jared Leto, Adam Driver, Lady Gaga",
+      "starList": [
+        {
+          "id": "nm0000161",
+          "name": "Salma Hayek"
+        },
+        {
+          "id": "nm0001467",
+          "name": "Jared Leto"
+        },
+        {
+          "id": "nm3485845",
+          "name": "Adam Driver"
+        },
+        {
+          "id": "nm3078932",
+          "name": "Lady Gaga"
+        }
+      ]
+    },
+    {
+      "id": "tt11271038",
+      "title": "Licorice Pizza",
+      "fullTitle": "Licorice Pizza (2021)",
+      "year": "2021",
+      "releaseState": "November 26",
+      "image": "https://m.media-amazon.com/images/M/MV5BMGU4NzhkZDAtZmIyNi00ZGE2LWE2ODMtMGNiNjc3MTQxOTU1XkEyXkFqcGdeQXVyODk2NDQ3MTA@._V1_UX128_CR0,4,128,176_AL_.jpg",
+      "runtimeMins": "133",
+      "runtimeStr": "2h 13mins",
+      "plot": "The story of Alana Kane and Gary Valentine growing up, running around and going through the treacherous navigation of first love in the San Fernando Valley, 1973.",
+      "contentRating": "R",
+      "imDbRating": "",
+      "imDbRatingCount": "",
+      "metacriticRating": "",
+      "genres": "Comedy, Drama, Romance",
+      "genreList": [
+        {
+          "key": "Comedy",
+          "value": "Comedy"
+        },
+        {
+          "key": "Drama",
+          "value": "Drama"
+        },
+        {
+          "key": "Romance",
+          "value": "Romance"
+        }
+      ],
+      "directors": "Paul Thomas Anderson",
+      "directorList": [
+        {
+          "id": "nm0000759",
+          "name": "Paul Thomas Anderson"
+        }
+      ],
+      "stars": "Bradley Cooper, Maya Rudolph, Skyler Gisondo, Sean Penn",
+      "starList": [
+        {
+          "id": "nm0177896",
+          "name": "Bradley Cooper"
+        },
+        {
+          "id": "nm0748973",
+          "name": "Maya Rudolph"
+        },
+        {
+          "id": "nm1711114",
+          "name": "Skyler Gisondo"
+        },
+        {
+          "id": "nm0000576",
+          "name": "Sean Penn"
+        }
+      ]
+    },
+    {
+      "id": "tt2953050",
+      "title": "Encanto",
+      "fullTitle": "Encanto (2021)",
+      "year": "2021",
+      "releaseState": "November 26",
+      "image": "https://m.media-amazon.com/images/M/MV5BNjE5NzA4ZDctOTJkZi00NzM0LTkwOTYtMDI4MmNkMzIxODhkXkEyXkFqcGdeQXVyNjY1MTg4Mzc@._V1_UX128_CR0,4,128,176_AL_.jpg",
+      "runtimeMins": "99",
+      "runtimeStr": "1h 39mins",
+      "plot": "A young Colombian girl has to face the frustration of being the only member of her family without magical powers.",
+      "contentRating": "PG",
+      "imDbRating": "",
+      "imDbRatingCount": "",
+      "metacriticRating": "",
+      "genres": "Animation, Adventure, Comedy, Family, Fantasy, Musical",
+      "genreList": [
+        {
+          "key": "Animation",
+          "value": "Animation"
+        },
+        {
+          "key": "Adventure",
+          "value": "Adventure"
+        },
+        {
+          "key": "Comedy",
+          "value": "Comedy"
+        },
+        {
+          "key": "Family",
+          "value": "Family"
+        },
+        {
+          "key": "Fantasy",
+          "value": "Fantasy"
+        },
+        {
+          "key": "Musical",
+          "value": "Musical"
+        }
+      ],
+      "directors": "Jared Bush, Byron Howard, Charise Castro Smith",
+      "directorList": [
+        {
+          "id": "nm1158544",
+          "name": "Jared Bush"
+        },
+        {
+          "id": "nm0397174",
+          "name": "Byron Howard"
+        },
+        {
+          "id": "nm4146781",
+          "name": "Charise Castro Smith"
+        }
+      ],
+      "stars": "Stephanie Beatriz, María Cecilia Botero, John Leguizamo, Mauro Castillo",
+      "starList": [
+        {
+          "id": "nm3715867",
+          "name": "Stephanie Beatriz"
+        },
+        {
+          "id": "nm1239720",
+          "name": "María Cecilia Botero"
+        },
+        {
+          "id": "nm0000491",
+          "name": "John Leguizamo"
+        },
+        {
+          "id": "nm8871347",
+          "name": "Mauro Castillo"
+        }
+      ]
+    },
+    {
+      "id": "tt6920084",
+      "title": "Resident Evil: Welcome to Raccoon City",
+      "fullTitle": "Resident Evil: Welcome to Raccoon City (2021)",
+      "year": "2021",
+      "releaseState": "November 26",
+      "image": "https://m.media-amazon.com/images/M/MV5BNjRmMDUxODctYjg3NC00NDRhLWJhZWItMjg0OTZkMDBjNWUxXkEyXkFqcGdeQXVyNjY1MTg4Mzc@._V1_UY176_CR6,0,128,176_AL_.jpg",
+      "runtimeMins": "107",
+      "runtimeStr": "1h 47mins",
+      "plot": "Set in 1998, this origin story explores the secrets of the mysterious Spencer Mansion and the ill-fated Raccoon City.",
+      "contentRating": "R",
+      "imDbRating": "",
+      "imDbRatingCount": "",
+      "metacriticRating": "",
+      "genres": "Action, Horror, Sci-Fi",
+      "genreList": [
+        {
+          "key": "Action",
+          "value": "Action"
+        },
+        {
+          "key": "Horror",
+          "value": "Horror"
+        },
+        {
+          "key": "Sci-Fi",
+          "value": "Sci-Fi"
+        }
+      ],
+      "directors": "Johannes Roberts",
+      "directorList": [
+        {
+          "id": "nm1266897",
+          "name": "Johannes Roberts"
+        }
+      ],
+      "stars": "Kaya Scodelario, Robbie Amell, Hannah John-Kamen, Neal McDonough",
+      "starList": [
+        {
+          "id": "nm2546012",
+          "name": "Kaya Scodelario"
+        },
+        {
+          "id": "nm2064412",
+          "name": "Robbie Amell"
+        },
+        {
+          "id": "nm4789912",
+          "name": "Hannah John-Kamen"
+        },
+        {
+          "id": "nm0568180",
+          "name": "Neal McDonough"
+        }
+      ]
+    },
+    {
+      "id": "tt10023286",
+      "title": "The Humans",
+      "fullTitle": "The Humans (2021)",
+      "year": "2021",
+      "releaseState": "November 26",
+      "image": "https://m.media-amazon.com/images/M/MV5BYTZjYzU4NDctNjg0NS00YmIzLTkzMzctZDQ2YjE3ZjEyMDg5XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_UX128_CR0,4,128,176_AL_.jpg",
+      "runtimeMins": "108",
+      "runtimeStr": "1h 48mins",
+      "plot": "Set inside a pre-war duplex in downtown Manhattan, The Humans follows the course of an evening in which the Blake family gathers to celebrate Thanksgiving. As darkness falls outside the crumbling building, mysterious things start to go bump in the night and family tensions reach a boiling point.",
+      "contentRating": "R",
+      "imDbRating": "",
+      "imDbRatingCount": "",
+      "metacriticRating": "78",
+      "genres": "Drama",
+      "genreList": [
+        {
+          "key": "Drama",
+          "value": "Drama"
+        }
+      ],
+      "directors": "Stephen Karam",
+      "directorList": [
+        {
+          "id": "nm3046538",
+          "name": "Stephen Karam"
+        }
+      ],
+      "stars": "Beanie Feldstein, June Squibb, Steven Yeun, Richard Jenkins",
+      "starList": [
+        {
+          "id": "nm2788156",
+          "name": "Beanie Feldstein"
+        },
+        {
+          "id": "nm0820053",
+          "name": "June Squibb"
+        },
+        {
+          "id": "nm3081796",
+          "name": "Steven Yeun"
+        },
+        {
+          "id": "nm0420955",
+          "name": "Richard Jenkins"
+        }
+      ]
+    },
+    {
+      "id": "tt14547524",
+      "title": "National Champions",
+      "fullTitle": "National Champions (2021)",
+      "year": "2021",
+      "releaseState": "November 26",
+      "image": "https://imdb-api.com/images/128x176/nopicture.jpg",
+      "runtimeMins": "",
+      "runtimeStr": "",
+      "plot": "Follows star quarterback who ignites a players strike hours before the biggest game of the year in order to fight for fair compensation, equality and respect for the student-athletes.",
+      "contentRating": "",
+      "imDbRating": "",
+      "imDbRatingCount": "",
+      "metacriticRating": "",
+      "genres": "Drama",
+      "genreList": [
+        {
+          "key": "Drama",
+          "value": "Drama"
+        }
+      ],
+      "directors": "Ric Roman Waugh",
+      "directorList": [
+        {
+          "id": "nm0006846",
+          "name": "Ric Roman Waugh"
+        }
+      ],
+      "stars": "Alexander Ludwig, Timothy Olyphant, J.K. Simmons, Kristin Chenoweth",
+      "starList": [
+        {
+          "id": "nm1573253",
+          "name": "Alexander Ludwig"
+        },
+        {
+          "id": "nm0648249",
+          "name": "Timothy Olyphant"
+        },
+        {
+          "id": "nm0799777",
+          "name": "J.K. Simmons"
+        },
+        {
+          "id": "nm0155693",
+          "name": "Kristin Chenoweth"
+        }
+      ]
+    },
+    {
+      "id": "tt14039582",
+      "title": "Drive My Car",
+      "fullTitle": "Drive My Car (2021)",
+      "year": "2021",
+      "releaseState": "November 26",
+      "image": "https://m.media-amazon.com/images/M/MV5BNmZlZTRhZDMtOGZlMy00YmYxLTk5MmEtMTJjMjk3OTJhODJiXkEyXkFqcGdeQXVyODA0MjgyNzM@._V1_UX128_CR0,2,128,176_AL_.jpg",
+      "runtimeMins": "179",
+      "runtimeStr": "2h 59mins",
+      "plot": "Nishijima Hidetoshi is a stage actor and director happily married to his playwright wife. Then one day she disappears.",
+      "contentRating": "",
+      "imDbRating": "",
+      "imDbRatingCount": "",
+      "metacriticRating": "89",
+      "genres": "Drama",
+      "genreList": [
+        {
+          "key": "Drama",
+          "value": "Drama"
+        }
+      ],
+      "directors": "Ryûsuke Hamaguchi",
+      "directorList": [
+        {
+          "id": "nm3152327",
+          "name": "Ryûsuke Hamaguchi"
+        }
+      ],
+      "stars": "Hidetoshi Nishijima, Tôko Miura, Reika Kirishima, Yoo-rim Park",
+      "starList": [
+        {
+          "id": "nm0632689",
+          "name": "Hidetoshi Nishijima"
+        },
+        {
+          "id": "nm4392528",
+          "name": "Tôko Miura"
+        },
+        {
+          "id": "nm1929776",
+          "name": "Reika Kirishima"
+        },
+        {
+          "id": "nm12719478",
+          "name": "Yoo-rim Park"
+        }
+      ]
+    }
+  ],
+  "errorMessage": ""
+}

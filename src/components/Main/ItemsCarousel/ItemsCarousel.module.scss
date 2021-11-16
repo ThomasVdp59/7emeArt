@@ -3,16 +3,27 @@
 .container {
   display: flex;
   align-items: center;
+  position: relative;
 
   svg {
     font-size: 26px;
     color: variables.$brand-main-color;
+    position: absolute;
     &:hover {
       cursor: pointer;
     }
   }
 
-  .carousel{
-      margin: 0 20px;
+  div:first-of-type svg {
+    left: -3%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 15;
+  }
+  div:last-of-type svg {
+    right: -3%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 15;
   }
 }

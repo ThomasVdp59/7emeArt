@@ -24,19 +24,19 @@ const MainSubsection = (props) => {
           case "Actualités séries":
             return <ItemsList listType="News" />;
           case "Actuellement au cinéma":
-            return <ItemsCarousel />;
+            return <ItemsCarousel dataNeeded="inTheaters" />;
           case "Films les plus populaires":
-            return <ItemsCarousel />;
+            return <ItemsCarousel dataNeeded="mostPopular" />;
           case "Séries les plus populaires":
-            return <ItemsCarousel />;
+            return <ItemsCarousel dataNeeded="mostPopularSeries" />;
           case "Prochaines sorties":
-            return <ItemsCarousel />;
+            return <ItemsCarousel dataNeeded="comingSoon" />;
           case "Films similaires":
-            return <ItemsCarousel />;
+            return <ItemsCarousel dataNeeded="similars" />;
           case "Top 250 films":
-            return <ItemsList listType="Top" />;
+            return <ItemsList listType="Top" dataNeeded="topMovies" />;
           case "Top 250 séries":
-            return <ItemsList listType="Top" />;
+            return <ItemsList listType="Top" dataNeeded="topShows" />;
           case "Box-office de la semaine":
             return <BoxOfficeMovies />;
           case "Acteurs principaux":

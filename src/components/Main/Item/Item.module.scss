@@ -6,7 +6,6 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-bottom: 45px;
 
   img {
     width: 274px;
@@ -18,18 +17,16 @@
 }
 
 .containerTop {
-  width: 200px;
+  width: auto;
   height: 300px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   overflow: hidden;
-  background-image: url("https://via.placeholder.com/500");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   border-radius: 15px;
-  margin-bottom: 45px;
   -webkit-border-radius: 15px;
   -moz-border-radius: 15px;
   -ms-border-radius: 15px;
@@ -51,11 +48,14 @@
     height: 100px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding-left: 20px;
-
+    justify-content: space-evenly;
+    padding: 15px;
+    background: variables.$black;
     span {
       font-weight: 400;
+      font-size: variables.$font-size-footer;
+      max-height: variables.$font-size-footer + 1;
+      overflow: hidden;
     }
   }
 }
