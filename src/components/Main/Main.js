@@ -54,7 +54,7 @@ const Main = (props) => {
   return (
     <div className={styles.container}>
       {sections.map((section, index) => (
-        <MainSubsection key={index} title={section} />
+        <MainSubsection key={index} title={section} details={props.details} />
       ))}
     </div>
   );

@@ -1,0 +1,95 @@
+{
+  "items": [
+    {
+      "id": "tt9032400",
+      "rank": "1",
+      "title": "Eternals",
+      "image": "https://m.media-amazon.com/images/M/MV5BMTExZmVjY2ItYTAzYi00MDdlLWFlOWItNTJhMDRjMzQ5ZGY0XkEyXkFqcGdeQXVyODIyOTEyMzY@._V1_UX128_CR0,3,128,176_AL_.jpg",
+      "weekend": "$26.9M",
+      "gross": "$118.1M",
+      "weeks": "2"
+    },
+    {
+      "id": "tt2397461",
+      "rank": "2",
+      "title": "Clifford the Big Red Dog",
+      "image": "https://m.media-amazon.com/images/M/MV5BZGIxYTU5MzctY2MzNS00MTRhLWEwM2UtY2Q5Mzk3OTAzMzcwXkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_UX128_CR0,3,128,176_AL_.jpg",
+      "weekend": "$16.6M",
+      "gross": "$22.2M",
+      "weeks": "1"
+    },
+    {
+      "id": "tt1160419",
+      "rank": "3",
+      "title": "Dune: Part One",
+      "image": "https://m.media-amazon.com/images/M/MV5BN2FjNmEyNWMtYzM0ZS00NjIyLTg5YzYtYThlMGVjNzE1OGViXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_UX128_CR0,3,128,176_AL_.jpg",
+      "weekend": "$5.5M",
+      "gross": "$93.2M",
+      "weeks": "4"
+    },
+    {
+      "id": "tt2382320",
+      "rank": "4",
+      "title": "No Time to Die",
+      "image": "https://m.media-amazon.com/images/M/MV5BYWQ2NzQ1NjktMzNkNS00MGY1LTgwMmMtYTllYTI5YzNmMmE0XkEyXkFqcGdeQXVyMjM4NTM5NDY@._V1_UX128_CR0,3,128,176_AL_.jpg",
+      "weekend": "$4.5M",
+      "gross": "$150.4M",
+      "weeks": "6"
+    },
+    {
+      "id": "tt7097896",
+      "rank": "5",
+      "title": "Venom: Let There Be Carnage",
+      "image": "https://m.media-amazon.com/images/M/MV5BYTc3ZTAwYTgtMmM4ZS00MDRiLWI2Y2EtYmRiZmE0YjkzMGY1XkEyXkFqcGdeQXVyMDA4NzMyOA@@._V1_UX128_CR0,3,128,176_AL_.jpg",
+      "weekend": "$3.9M",
+      "gross": "$202.6M",
+      "weeks": "7"
+    },
+    {
+      "id": "tt7504818",
+      "rank": "6",
+      "title": "Ron's Gone Wrong",
+      "image": "https://m.media-amazon.com/images/M/MV5BMzMxMjllYTgtZWNjZS00ODc0LTljZWUtYjdiMDQ2ZDJkM2FkXkEyXkFqcGdeQXVyNjY1MTg4Mzc@._V1_UX128_CR0,3,128,176_AL_.jpg",
+      "weekend": "$2.2M",
+      "gross": "$20.8M",
+      "weeks": "4"
+    },
+    {
+      "id": "tt12789558",
+      "rank": "7",
+      "title": "Belfast",
+      "image": "https://m.media-amazon.com/images/M/MV5BODMwYTYyY2ItOWQ5Yi00OTI1LTllYTQtYTdlNWM4YzJhYTM0XkEyXkFqcGdeQXVyMTA2MDU0NjM5._V1_UX128_CR0,3,128,176_AL_.jpg",
+      "weekend": "$1.8M",
+      "gross": "$1.8M",
+      "weeks": "1"
+    },
+    {
+      "id": "tt8847712",
+      "rank": "8",
+      "title": "The French Dispatch",
+      "image": "https://m.media-amazon.com/images/M/MV5BNmQxZTNiODYtNzBhYy00MzVlLWJlN2UtNTc4YWZjMDIwMmEzXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_UX128_CR0,3,128,176_AL_.jpg",
+      "weekend": "$1.8M",
+      "gross": "$11.5M",
+      "weeks": "4"
+    },
+    {
+      "id": "tt12536294",
+      "rank": "9",
+      "title": "Spencer",
+      "image": "https://m.media-amazon.com/images/M/MV5BMTdkZDc4YmQtYzA3My00NzliLThjN2YtMDIwMDkxY2Y4ODdmXkEyXkFqcGdeQXVyMTA2MDU0NjM5._V1_UX128_CR0,3,128,176_AL_.jpg",
+      "weekend": "$1.5M",
+      "gross": "$4.7M",
+      "weeks": "2"
+    },
+    {
+      "id": "tt7740510",
+      "rank": "10",
+      "title": "Antlers",
+      "image": "https://m.media-amazon.com/images/M/MV5BY2UzODAyNjktN2MwYy00M2RkLThiOTEtMjU1MTgxY2EzM2YyXkEyXkFqcGdeQXVyODk5MDA0MDU@._V1_UX128_CR0,3,128,176_AL_.jpg",
+      "weekend": "$1.1M",
+      "gross": "$9.6M",
+      "weeks": "3"
+    }
+  ],
+  "errorMessage": ""
+}

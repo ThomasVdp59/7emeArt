@@ -1,15 +1,41 @@
 import React from "react";
 import styles from "./BoxOfficeItem.module.scss";
 
-const BoxOfficeItem = () => {
+const BoxOfficeItem = (props) => {
   return (
     <div className={styles.container}>
-      <ul>
-        <li>Budget : <span>160,000,000 $ (estimation)</span></li>
-        <li>Week-end d'ouverture aux États-Unis : <span>62,785,337 $</span></li>
-        <li>Recette aux États-Unis : <span>292,576,195 $</span></li>
-        <li>Recette internationale: <span>836,836,967 $</span></li>
-      </ul>
+      {props.details.boxOffice && props.details.boxOffice.length !== 0 && (
+        <ul>
+          <li>
+            Budget :{" "}
+            <span>
+              {props.details.boxOffice.budget.slice(
+                0,
+                props.details.boxOffice.budget.indexOf("(")
+              )}{" "}
+              (estimation)
+            </span>
+          </li>
+          <li>
+            Week-end d'ouverture aux États-Unis :{" "}
+            <span>
+              {props.details.boxOffice.openingWeekendUSA.slice(
+                0,
+                props.details.boxOffice.openingWeekendUSA.indexOf(" ")
+              )}{" "}
+              :
+            </span>
+          </li>
+          <li>
+            Recette aux États-Unis :{" "}
+            <span>{props.details.boxOffice.grossUSA}</span>
+          </li>
+          <li>
+            Recette internationale:{" "}
+            <span>{props.details.boxOffice.cumulativeWorldwideGross}</span>
+          </li>
+        </ul>
+      )}
     </div>
   );
 };

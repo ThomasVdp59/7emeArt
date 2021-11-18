@@ -1,13 +1,14 @@
 import React from "react";
 import styles from "./Actor.module.scss";
 
-const Actor = () => {
+const Actor = (props) => {
   return (
     <div className={styles.container}>
       <figure>
-        <img src="https://source.unsplash.com/800x600/?girl" alt="Actor" />
+        <img src={props.data.image} alt="Actor" />
         <figcaption>
-          Robb Hisley <br/> <span>Personnage : Leon</span>
+          {props.data.name} <br />{" "}
+          <span>{props.data.asCharacter}</span>
         </figcaption>
       </figure>
     </div>

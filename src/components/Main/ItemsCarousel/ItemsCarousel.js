@@ -10,7 +10,33 @@ const ItemsCarousel = (props) => {
   const viewsNumber = 7;
 
   useEffect(() => {
-    if (props.dataNeeded === "inTheaters") {
+    if (props.dataNeeded === "mostPopularMovies") {
+      axios.get("../database/mostPopularMovies.json").then((response) => {
+        setItemsData(response.data.items);
+        const sliders = document.querySelectorAll(".glide");
+        sliders.forEach((item) => {
+          new Glide(item, {
+            type: "slider",
+            startAt: 0,
+            perView: viewsNumber,
+            bound: true
+          }).mount();
+        });
+      });
+    } else if (props.dataNeeded === "mostPopularShows") {
+      axios.get("../database/mostPopularShows.json").then((response) => {
+        setItemsData(response.data.items);
+        const sliders = document.querySelectorAll(".glide");
+        sliders.forEach((item) => {
+          new Glide(item, {
+            type: "slider",
+            startAt: 0,
+            perView: viewsNumber,
+            bound: true
+          }).mount();
+        });
+      });
+    } else if (props.dataNeeded === "inTheaters") {
       axios.get("../database/inTheathers.json").then((response) => {
         setItemsData(response.data.items);
         const sliders = document.querySelectorAll(".glide");
