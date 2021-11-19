@@ -21,9 +21,8 @@ const BoxOfficeItem = (props) => {
             <span>
               {props.details.boxOffice.openingWeekendUSA.slice(
                 0,
-                props.details.boxOffice.openingWeekendUSA.indexOf(" ")
+                props.details.boxOffice.openingWeekendUSA.indexOf(", ")
               )}{" "}
-              :
             </span>
           </li>
           <li>

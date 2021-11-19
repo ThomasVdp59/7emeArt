@@ -24,7 +24,7 @@ const ItemsList = (props) => {
         setItemsToShow(response.data.items);
       });
     }
-  }, []);
+  }, [props.dataNeeded]);
 
   useEffect(() => {
     const endOffset = itemOffset + numberOfItemsOnPage;

@@ -11,7 +11,7 @@ const Item = (props) => {
       data.image = "https://imdb-api.com/images/384x528/nopicture.jpg";
     }
     if (
-      data.image != "https://imdb-api.com/images/384x528/nopicture.jpg" &&
+      data.image !== "https://imdb-api.com/images/384x528/nopicture.jpg" &&
       data.image.indexOf("/original") === -1
     ) {
       data.image =

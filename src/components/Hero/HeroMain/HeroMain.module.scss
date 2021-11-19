@@ -59,6 +59,9 @@
   p {
     width: 720px;
     z-index: 1;
+    display: flex;
+    flex-grow: 0.45;
+    align-items: center;
   }
 
   .cta {
@@ -101,7 +104,7 @@
     opacity: 0.6;
     filter: blur(50px);
     -webkit-filter: blur(50px);
-}
+  }
 }
 
 .modal {

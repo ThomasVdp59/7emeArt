@@ -33,7 +33,7 @@ const MainSubsection = (props) => {
             return <ItemsCarousel dataNeeded="comingSoon" />;
           case "Films similaires":
             return (
-              <ItemsCarousel dataNeeded="similars" details={props.details} />
+              <ItemsCarousel details={props.details} />
             );
           case "Top 250 films":
             return <ItemsList listType="Top" dataNeeded="topMovies" />;

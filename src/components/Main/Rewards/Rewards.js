@@ -10,14 +10,19 @@ const Rewards = (props) => {
             <span>
               {props.details.awards.slice(
                 props.details.awards.indexOf("& ") + 2,
-                props.details.awards.indexOf(" Oscars.")
+                props.details.awards.indexOf(" nominations")
               )}
             </span>
             <br />
             Nomination(s)
           </li>
           <li>
-            <span>157</span>
+            <span>
+              {props.details.awards.slice(
+                props.details.awards.indexOf("Another ") + 8,
+                props.details.awards.indexOf(" wins")
+              )}
+            </span>
             <br />
             Victoire(s)
           </li>
@@ -30,13 +35,6 @@ const Rewards = (props) => {
             </span>
             <br />
             Oscar(s)
-          </li>
-          <li>
-            <span>15ème</span>
-            <br />
-            Meilleur film
-            <br />
-            <i>(selon ImDb)</i>
           </li>
         </ul>
       )}

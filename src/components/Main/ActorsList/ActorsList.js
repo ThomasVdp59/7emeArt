@@ -3,21 +3,6 @@ import styles from "./ActorsList.module.scss";
 import Actor from "../Actor/Actor";
 
 const ActorsList = (props) => {
-  const numberOfActorsToShow = 6;
-  const actors = [
-    "Robb Hisley",
-    "Robb Hisley",
-    "Robb Hisley",
-    "Robb Hisley",
-    "Robb Hisley",
-    "Robb Hisley",
-    "Robb Hisley",
-    "Robb Hisley",
-    "Robb Hisley",
-    "Robb Hisley",
-    "Robb Hisley"
-  ];
-  const actorsToShow = actors.slice(0, numberOfActorsToShow);
   return (
     <div className={styles.container}>
       {props.details.actorList &&
