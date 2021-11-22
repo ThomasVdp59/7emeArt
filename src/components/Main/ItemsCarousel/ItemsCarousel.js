@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 import styles from "./ItemsCarousel.module.scss";
 import Item from "../Item/Item";
 import { FiArrowLeftCircle, FiArrowRightCircle } from "react-icons/fi";
 import Glide from "@glidejs/glide";
 import axios from "axios";
 
-const ItemsCarousel = (props) => {
+const ItemsCarousel = ({ dataNeeded, details }) => {
   const [itemsData, setItemsData] = useState([]);
   const viewsNumber = 7;
 
   useEffect(() => {
-    if (props && props.dataNeeded && props.dataNeeded.length > 0) {
-      switch (props.dataNeeded) {
+    if (dataNeeded && dataNeeded.length > 0) {
+      switch (dataNeeded) {
         case "mostPopularMovies":
           axios.get("../database/mostPopularMovies.json").then((response) => {
             setItemsData(response.data.items);
@@ -33,19 +34,19 @@ const ItemsCarousel = (props) => {
           });
           break;
         default:
-          console.log("Correct props needed");
+          console.log("Correct needed");
           break;
       }
     }
-  }, [props]);
+  }, []);
 
   useEffect(() => {
     let sliders;
-    if (props && props.details && props.details.similars && props.details.similars.length > 0) {
-      setItemsData(props.details.similars);
+    if (details && details.similars && details.similars.length > 0) {
+      setItemsData(details.similars);
       sliders = document.querySelectorAll(".glide");
     } else if (itemsData) {
-      sliders = document.querySelectorAll(".glide" + props.dataNeeded);
+      sliders = document.querySelectorAll(".glide" + dataNeeded);
     }
     if (itemsData.length > 0) {
       sliders.forEach((item) => {
@@ -69,10 +70,17 @@ const ItemsCarousel = (props) => {
         }
       });
     }
-  }, [props, itemsData]);
+  }, [details, itemsData]);
 
   return (
-    <div className={`glide${props.dataNeeded} ${styles.container}`}>
+    <div
+      className={`glide${
+        dataNeeded && dataNeeded.length && dataNeeded.length > 0
+          ? dataNeeded
+          : ""
+      }
+        ${styles.container}`}
+    >
       <React.Fragment>
         {itemsData.length !== viewsNumber && (
           <div data-glide-el="controls">
@@ -84,8 +92,7 @@ const ItemsCarousel = (props) => {
           data-glide-el="track"
         >
           <ul className="glide__slides">
-            {props &&
-              itemsData &&
+            {itemsData &&
               itemsData.length > 0 &&
               itemsData.map((data, position) => (
                 <li className="glide__slide" key={position}>
@@ -103,6 +110,11 @@ const ItemsCarousel = (props) => {
       </React.Fragment>
     </div>
   );
+};
+
+ItemsCarousel.propTypes = {
+  dataNeeded: PropTypes.string,
+  details: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
 };
 
 export default ItemsCarousel;

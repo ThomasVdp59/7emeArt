@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 import styles from "./BoxOfficeMovies.module.scss";
 import axios from "axios";
 
-const BoxOfficeMovies = (props) => {
+const BoxOfficeMovies = ({ dataNeeded }) => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    if (props.dataNeeded === "boxOfficeWeek") {
+    if (dataNeeded === "boxOfficeWeek") {
       axios.get("../database/weekBoxoffice.json").then((response) => {
         setData(response.data.items.slice(0, 6));
       });
@@ -33,6 +34,10 @@ const BoxOfficeMovies = (props) => {
       })}
     </div>
   );
+};
+
+BoxOfficeMovies.propTypes = {
+  dataNeeded: PropTypes.string.isRequired
 };
 
 export default BoxOfficeMovies;

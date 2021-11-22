@@ -1,11 +1,10 @@
 import React from "react";
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 import styles from "./Item.module.scss";
 import img from "../../../assets/images/newsexemple.png";
 
-const Item = (props) => {
-  const { data } = props;
-  const { type } = props;
-
+const Item = ({ data, type }) => {
   if (data) {
     if (data.image === "https://imdb-api.com/images/128x176/nopicture.jpg") {
       data.image = "https://imdb-api.com/images/384x528/nopicture.jpg";
@@ -41,7 +40,9 @@ const Item = (props) => {
       >
         {type === "Top" && <span className={styles.rank}>{data.rank}</span>}
         <div className={styles.textContainer}>
-          <h3>{data.title}</h3>
+          <Link to={"/details/" + data.id}>
+            <h3>{data.title}</h3>
+          </Link>
           {data.imDbRating ? <span>note Imdb : {data.imDbRating}</span> : ""}
           {data.metacriticRating ? (
             <span>note Imdb : {data.metacriticRating}</span>
@@ -51,7 +52,7 @@ const Item = (props) => {
           {data.metacriticRating || data.imDbRating ? (
             ""
           ) : (
-            <span>Pas encore sorti</span>
+            <span>Pas encore noté</span>
           )}
         </div>
       </div>
@@ -68,6 +69,11 @@ const Item = (props) => {
       </div>
     );
   }
+};
+
+Item.propTypes = {
+  data: PropTypes.oneOfType([PropTypes.array, PropTypes.object]).isRequired,
+  type: PropTypes.string.isRequired
 };
 
 export default Item;

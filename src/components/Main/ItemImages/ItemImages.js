@@ -1,25 +1,22 @@
 import React, { useState } from "react";
 import styles from "./ItemImages.module.scss";
+import PropTypes from "prop-types";
 
-const ItemImages = (props) => {
+const ItemImages = ({ details }) => {
   let images;
-  let arrayImages;
   let firstImage;
   let otherImages;
   const [lightbox, setLightbox] = useState();
 
-  if (props.details.images && props.details.images.items.length > 0) {
-    images = props.details.images.items.slice(0, 12);
-    arrayImages = ["https://source.unsplash.com/800x600/?girl", ...images];
-    console.log(arrayImages);
-    firstImage = arrayImages.slice(0, 1);
-    otherImages = arrayImages.slice(1, arrayImages.length);
+  if (details.images && details.images.items.length > 0) {
+    images = details.images.items.slice(0, 13);
+    firstImage = images.slice(0, 1);
+    otherImages = images.slice(1, images.length);
   }
 
   const handleClick = (image, e) => {
     e.preventDefault();
     lightbox === true ? setLightbox(false) : setLightbox(true);
-    console.log(image);
     const lightboxElement = document.getElementById("lightbox");
     const img = document.createElement("img");
     img.src = image;
@@ -31,14 +28,14 @@ const ItemImages = (props) => {
 
   return (
     <div className={styles.container}>
-      {arrayImages && arrayImages.length > 0 && (
+      {images && images.length > 0 && (
         <React.Fragment>
           <div className={styles.mainImage}>
             <img
-              src={firstImage[0]}
+              src={firstImage[0].image}
               alt="anImage"
-              key={firstImage[0]}
-              onClick={handleClick.bind(this, firstImage[0])}
+              key={firstImage[0].image}
+              onClick={handleClick.bind(this, firstImage[0].image)}
               className={`${
                 lightbox === firstImage[0] ? styles.imageLight : styles.image
               }`}
@@ -62,7 +59,6 @@ const ItemImages = (props) => {
             onClick={(e) => {
               e.preventDefault();
               setLightbox(false);
-              console.log("Le lien a été cliqué.");
             }}
             className={`${styles.lightbox} ${
               lightbox === true ? styles.lightboxActive : ""
@@ -73,4 +69,9 @@ const ItemImages = (props) => {
     </div>
   );
 };
+
+ItemImages.propTypes = {
+  details: PropTypes.oneOfType([PropTypes.array, PropTypes.object]).isRequired
+};
+
 export default ItemImages;

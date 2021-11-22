@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useContext } from "react";
+import PropTypes from "prop-types";
 import styles from "./Main.module.scss";
 import MainSubsection from "./MainSubsection/MainSubsection";
-import { PathContext } from "../Contexts/PathContext";
+import { pathContext } from "../../contexts/pathContext";
 
-const Main = (props) => {
+const Main = ({ details }) => {
   const [sections, setSections] = useState([]);
-  const { pathname } = useContext(PathContext);
+  const { pathname } = useContext(pathContext);
 
   useEffect(() => {
     switch (true) {
@@ -54,10 +55,14 @@ const Main = (props) => {
   return (
     <div className={styles.container}>
       {sections.map((section, index) => (
-        <MainSubsection key={index} title={section} details={props.details} />
+        <MainSubsection key={index} title={section} details={details} />
       ))}
     </div>
   );
+};
+
+Main.propTypes = {
+  details: PropTypes.oneOfType([PropTypes.array, PropTypes.object]).isRequired
 };
 
 export default Main;

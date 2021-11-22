@@ -1,16 +1,17 @@
 import React from "react";
 import styles from "./Rewards.module.scss";
+import PropTypes from "prop-types";
 
-const Rewards = (props) => {
+const Rewards = ({ details }) => {
   return (
     <div className={styles.container}>
-      {props.details.awards && props.details.awards.length !== 0 && (
+      {details.awards && details.awards.length !== 0 && (
         <ul className={styles.rewardsList}>
           <li>
             <span>
-              {props.details.awards.slice(
-                props.details.awards.indexOf("& ") + 2,
-                props.details.awards.indexOf(" nominations")
+              {details.awards.slice(
+                details.awards.indexOf("& ") + 2,
+                details.awards.indexOf(" nominations")
               )}
             </span>
             <br />
@@ -18,9 +19,9 @@ const Rewards = (props) => {
           </li>
           <li>
             <span>
-              {props.details.awards.slice(
-                props.details.awards.indexOf("Another ") + 8,
-                props.details.awards.indexOf(" wins")
+              {details.awards.slice(
+                details.awards.indexOf("Another ") + 8,
+                details.awards.indexOf(" wins")
               )}
             </span>
             <br />
@@ -28,10 +29,7 @@ const Rewards = (props) => {
           </li>
           <li>
             <span>
-              {props.details.awards.slice(
-                14,
-                props.details.awards.indexOf(" Oscars.")
-              )}
+              {details.awards.slice(14, details.awards.indexOf(" Oscars."))}
             </span>
             <br />
             Oscar(s)
@@ -40,6 +38,10 @@ const Rewards = (props) => {
       )}
     </div>
   );
+};
+
+Rewards.propTypes = {
+  details: PropTypes.oneOfType([PropTypes.array, PropTypes.object]).isRequired
 };
 
 export default Rewards;

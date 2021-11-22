@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./MainSubsection.module.scss";
+import PropTypes from "prop-types";
 import Title from "../Title/Title";
 import ItemsCarousel from "../ItemsCarousel/ItemsCarousel";
 import BoxOfficeMovies from "../BoxOfficeMovies/BoxOfficeMovies";
@@ -9,14 +10,12 @@ import Rewards from "../Rewards/Rewards";
 import BoxOfficeItem from "../BoxOfficeItem/BoxOfficeItem";
 import ItemImages from "../ItemImages/ItemImages";
 
-const MainSubsection = (props) => {
+const MainSubsection = ({ title, details }) => {
   return (
     <div className={styles.container}>
-      {props.title !== "Box-Office/Récompenses" && (
-        <Title value={props.title}></Title>
-      )}
+      {title !== "Box-Office/Récompenses" && <Title value={title}></Title>}
       {(() => {
-        switch (props.title) {
+        switch (title) {
           case "Actualités films et séries":
             return <ItemsList listType="News" />;
           case "Actualités films":
@@ -32,9 +31,7 @@ const MainSubsection = (props) => {
           case "Prochaines sorties":
             return <ItemsCarousel dataNeeded="comingSoon" />;
           case "Films similaires":
-            return (
-              <ItemsCarousel details={props.details} />
-            );
+            return <ItemsCarousel details={details} />;
           case "Top 250 films":
             return <ItemsList listType="Top" dataNeeded="topMovies" />;
           case "Top 250 séries":
@@ -42,29 +39,34 @@ const MainSubsection = (props) => {
           case "Box-office de la semaine":
             return <BoxOfficeMovies dataNeeded="boxOfficeWeek" />;
           case "Acteurs principaux":
-            return <ActorsList details={props.details} />;
+            return <ActorsList details={details} />;
           case "Box-Office/Récompenses":
             return (
               <div className={styles.boxOfficeAndRewards}>
                 <section>
                   <Title value="Box-Office"></Title>
-                  <BoxOfficeItem details={props.details} />
+                  <BoxOfficeItem details={details} />
                 </section>
                 <section>
                   <Title value="Récompenses"></Title>
-                  <Rewards details={props.details} />
+                  <Rewards details={details} />
                 </section>
               </div>
             );
           case "Images":
-            return <ItemImages details={props.details} />;
+            return <ItemImages details={details} />;
           default:
-            console.log("No props.title found.");
+            console.log("No title found.");
             break;
         }
       })()}
     </div>
   );
+};
+
+MainSubsection.propTypes = {
+  details: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
+  title: PropTypes.string.isRequired
 };
 
 export default MainSubsection;

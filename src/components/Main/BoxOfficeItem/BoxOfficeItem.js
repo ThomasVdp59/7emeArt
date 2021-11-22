@@ -1,17 +1,18 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styles from "./BoxOfficeItem.module.scss";
 
-const BoxOfficeItem = (props) => {
+const BoxOfficeItem = ({ details }) => {
   return (
     <div className={styles.container}>
-      {props.details.boxOffice && props.details.boxOffice.length !== 0 && (
+      {details.boxOffice && details.boxOffice.length !== 0 && (
         <ul>
           <li>
             Budget :{" "}
             <span>
-              {props.details.boxOffice.budget.slice(
+              {details.boxOffice.budget.slice(
                 0,
-                props.details.boxOffice.budget.indexOf("(")
+                details.boxOffice.budget.indexOf("(")
               )}{" "}
               (estimation)
             </span>
@@ -19,24 +20,27 @@ const BoxOfficeItem = (props) => {
           <li>
             Week-end d'ouverture aux États-Unis :{" "}
             <span>
-              {props.details.boxOffice.openingWeekendUSA.slice(
+              {details.boxOffice.openingWeekendUSA.slice(
                 0,
-                props.details.boxOffice.openingWeekendUSA.indexOf(", ")
+                details.boxOffice.openingWeekendUSA.indexOf(", ")
               )}{" "}
             </span>
           </li>
           <li>
-            Recette aux États-Unis :{" "}
-            <span>{props.details.boxOffice.grossUSA}</span>
+            Recette aux États-Unis : <span>{details.boxOffice.grossUSA}</span>
           </li>
           <li>
             Recette internationale:{" "}
-            <span>{props.details.boxOffice.cumulativeWorldwideGross}</span>
+            <span>{details.boxOffice.cumulativeWorldwideGross}</span>
           </li>
         </ul>
       )}
     </div>
   );
+};
+
+BoxOfficeItem.propTypes = {
+  details: PropTypes.oneOfType([PropTypes.array, PropTypes.object]).isRequired
 };
 
 export default BoxOfficeItem;

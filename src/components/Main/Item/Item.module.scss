@@ -71,6 +71,10 @@
   padding: 15px;
   background: variables.$black;
 
+  a {
+    text-transform: none;
+  }
+
   h3 {
     width: 150px;
     white-space: nowrap;
