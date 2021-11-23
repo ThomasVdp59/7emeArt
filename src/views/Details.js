@@ -2,11 +2,12 @@ import React, { useState, useEffect } from "react";
 import Hero from "../components/Hero/Hero.js";
 import Main from "../components/Main/Main.js";
 import Footer from "../components/Footer/Footer.js";
-import { useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { pathContext } from "../contexts/pathContext";
 import axios from "axios";
 
 const Details = () => {
+  let navigate = useNavigate();
   const location = useLocation();
   const [data, setData] = useState([]);
   const [error, setError] = useState("");
@@ -25,18 +26,21 @@ const Details = () => {
       .get(url)
       .then((response) => {
         setData(response.data);
-        if (response.data.errorMessage.length > 0) {
-          setError(response.data.errorMessage);
+        if (
+          response.data.title.length > 0 &&
+          response.data.fullTitle.length > 0
+        ) {
+          navigate("/notFound");
         }
       })
       .catch((error) => {
-        setError(error);
+        navigate("/notFound");
       });
   }, [location]);
 
   return (
     <pathContext.Provider value={location}>
-      {data && data.id && data.id.length > 0 && (
+      {data?.id?.length > 0 && (
         <React.Fragment>
           <Hero details={data} />
           <Main details={data} />

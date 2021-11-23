@@ -11,7 +11,7 @@ const ItemsCarousel = ({ dataNeeded, details }) => {
   const viewsNumber = 7;
 
   useEffect(() => {
-    if (dataNeeded && dataNeeded.length > 0) {
+    if (dataNeeded?.length > 0) {
       switch (dataNeeded) {
         case "mostPopularMovies":
           axios.get("../database/mostPopularMovies.json").then((response) => {
@@ -42,7 +42,7 @@ const ItemsCarousel = ({ dataNeeded, details }) => {
 
   useEffect(() => {
     let sliders;
-    if (details && details.similars && details.similars.length > 0) {
+    if (details?.similars?.length > 0) {
       setItemsData(details.similars);
       sliders = document.querySelectorAll(".glide");
     } else if (itemsData) {
@@ -74,11 +74,7 @@ const ItemsCarousel = ({ dataNeeded, details }) => {
 
   return (
     <div
-      className={`glide${
-        dataNeeded && dataNeeded.length && dataNeeded.length > 0
-          ? dataNeeded
-          : ""
-      }
+      className={`glide${dataNeeded?.length > 0 ? dataNeeded : ""}
         ${styles.container}`}
     >
       <React.Fragment>
@@ -92,8 +88,7 @@ const ItemsCarousel = ({ dataNeeded, details }) => {
           data-glide-el="track"
         >
           <ul className="glide__slides">
-            {itemsData &&
-              itemsData.length > 0 &&
+            {itemsData?.length > 0 &&
               itemsData.map((data, position) => (
                 <li className="glide__slide" key={position}>
                   {" "}

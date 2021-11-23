@@ -20,13 +20,13 @@ const Item = ({ data, type }) => {
         ) + "UX384_CR0,4,384,528_AL_.jpg";
     }
 
-    if (data.directors && data.directors.indexOf(",") !== -1) {
+    if (data && data.directors && data?.directors?.indexOf(",") !== -1) {
       data.directors = data.directors.substring(
         0,
         data.directors.indexOf("(dir.)")
       );
-    } else if (data.crew && data.crew.indexOf(",") !== -1) {
-      data.directors = data.crew.substring(0, data.crew.indexOf("(dir.)"));
+    } else if (data && data.crew && data?.crew?.indexOf(",") !== -1) {
+      data.directors = data?.crew?.substring(0, data?.crew?.indexOf("(dir.)"));
     }
   }
 

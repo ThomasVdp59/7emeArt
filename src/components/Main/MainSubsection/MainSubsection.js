@@ -13,7 +13,10 @@ import ItemImages from "../ItemImages/ItemImages";
 const MainSubsection = ({ title, details }) => {
   return (
     <div className={styles.container}>
-      {title !== "Box-Office/Récompenses" && <Title value={title}></Title>}
+      {title !== "Box-Office/Récompenses" &&
+        title !== "Films similaires" &&
+        title !== "Acteurs principaux" &&
+        title !== "Images" && <Title value={title}></Title>}
       {(() => {
         switch (title) {
           case "Actualités films et séries":
@@ -31,7 +34,16 @@ const MainSubsection = ({ title, details }) => {
           case "Prochaines sorties":
             return <ItemsCarousel dataNeeded="comingSoon" />;
           case "Films similaires":
-            return <ItemsCarousel details={details} />;
+            if (details?.similars?.length > 0) {
+              return (
+                <React.Fragment>
+                  <Title value={title}></Title>
+                  <ItemsCarousel details={details} />
+                </React.Fragment>
+              );
+            } else {
+              return null;
+            }
           case "Top 250 films":
             return <ItemsList listType="Top" dataNeeded="topMovies" />;
           case "Top 250 séries":
@@ -39,22 +51,44 @@ const MainSubsection = ({ title, details }) => {
           case "Box-office de la semaine":
             return <BoxOfficeMovies dataNeeded="boxOfficeWeek" />;
           case "Acteurs principaux":
-            return <ActorsList details={details} />;
+            if (details?.actorList?.length > 0) {
+              return (
+                <React.Fragment>
+                  <Title value={title}></Title>
+                  <ActorsList details={details} />
+                </React.Fragment>
+              );
+            } else {
+              return null;
+            }
           case "Box-Office/Récompenses":
             return (
               <div className={styles.boxOfficeAndRewards}>
-                <section>
-                  <Title value="Box-Office"></Title>
-                  <BoxOfficeItem details={details} />
-                </section>
-                <section>
-                  <Title value="Récompenses"></Title>
-                  <Rewards details={details} />
-                </section>
+                {details?.boxOffice?.length > 0 && (
+                  <section>
+                    <Title value="Box-Office"></Title>
+                    <BoxOfficeItem details={details} />
+                  </section>
+                )}
+                {details?.awards?.length > 0 && (
+                  <section>
+                    <Title value="Récompenses"></Title>
+                    <Rewards details={details} />
+                  </section>
+                )}
               </div>
             );
           case "Images":
-            return <ItemImages details={details} />;
+            if (details?.images?.items?.length > 0) {
+              return (
+                <React.Fragment>
+                  <Title value={title}></Title>
+                  <ItemImages details={details} />
+                </React.Fragment>
+              );
+            } else {
+              return null;
+            }
           default:
             console.log("No title found.");
             break;

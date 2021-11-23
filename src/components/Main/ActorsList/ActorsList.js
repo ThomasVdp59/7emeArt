@@ -6,8 +6,7 @@ import Actor from "../Actor/Actor";
 const ActorsList = ({ details }) => {
   return (
     <div className={styles.container}>
-      {details.actorList &&
-        details.actorList.length !== 0 &&
+      {details?.actorList?.length !== 0 &&
         details.actorList
           .slice(0, 6)
           .map((actor, position) => <Actor key={actor.id} actor={actor} />)}

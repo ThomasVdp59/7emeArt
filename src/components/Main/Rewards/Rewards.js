@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 const Rewards = ({ details }) => {
   return (
     <div className={styles.container}>
-      {details.awards && details.awards.length !== 0 && (
+      {details?.awards?.length !== 0 && (
         <ul className={styles.rewardsList}>
           <li>
             <span>

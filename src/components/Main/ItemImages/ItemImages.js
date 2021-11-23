@@ -8,7 +8,7 @@ const ItemImages = ({ details }) => {
   let otherImages;
   const [lightbox, setLightbox] = useState();
 
-  if (details.images && details.images.items.length > 0) {
+  if (details?.images?.items?.length > 0) {
     images = details.images.items.slice(0, 13);
     firstImage = images.slice(0, 1);
     otherImages = images.slice(1, images.length);
@@ -28,7 +28,7 @@ const ItemImages = ({ details }) => {
 
   return (
     <div className={styles.container}>
-      {images && images.length > 0 && (
+      {images?.length > 0 && (
         <React.Fragment>
           <div className={styles.mainImage}>
             <img

@@ -24,12 +24,38 @@ const Hero = ({ details }) => {
   useEffect(() => {
     if (details) {
       setItemData(details);
+    } else if (pathname === "/" || pathname === "/news") {
+      let itemData;
+      axios
+        .get("https://imdb-api.com/en/API/ComingSoon/k_811xf9fl")
+        .then((response) => {
+          console.log(response.data.items[0].id);
+          console.log(response.data.items[0].releaseState);
+          itemData = response.data.items[0];
+          axios
+            .get(
+              "https://imdb-api.com/fr/API/Title/k_811xf9fl/" +
+                response.data.items[0].id +
+                "/Posters"
+            )
+            .then((response) => {
+              console.log(response);
+              itemData = { ...itemData, ...response.data };
+              setItemData(itemData);
+            });
+        });
+      console.log("Home");
+    } else if (pathname === "/films") {
+      console.log("Films");
+    } else if (pathname === "/series") {
+      console.log("Series");
     }
   }, [details]);
 
   useEffect(() => {
-    if (itemData && itemData.posters && itemData.posters) {
+    if (itemData?.posters?.backdrops[0]?.id?.length > 0) {
       backdropFinder(itemData.posters);
+    } else {
     }
   }, [itemData]);
 

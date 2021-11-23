@@ -5,7 +5,7 @@ import styles from "./BoxOfficeItem.module.scss";
 const BoxOfficeItem = ({ details }) => {
   return (
     <div className={styles.container}>
-      {details.boxOffice && details.boxOffice.length !== 0 && (
+      {details?.boxOffice?.length !== 0 && (
         <ul>
           <li>
             Budget :{" "}
