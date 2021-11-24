@@ -1,14 +1,12 @@
 @use "../../../styles/variables.scss" as variables;
 
-li {
-  font-size: variables.$font-size-footer-headings;
-  font-family: variables.$font-family-sans-serif-text;
-  padding: 0 0 1rem 0;
-
-  &:nth-of-type(4) {
-    padding: 0;
-  }
-  span {
-    font-weight: bold;
+.container {
+  li {
+    font-size: variables.$font-size-footer-headings;
+    font-family: variables.$font-family-sans-serif-text;
+    padding: 1rem 0 0 0;
+    span {
+      font-weight: bold;
+    }
   }
 }

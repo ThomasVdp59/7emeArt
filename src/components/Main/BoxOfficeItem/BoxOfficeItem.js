@@ -5,8 +5,8 @@ import styles from "./BoxOfficeItem.module.scss";
 const BoxOfficeItem = ({ details }) => {
   return (
     <div className={styles.container}>
-      {details?.boxOffice?.length !== 0 && (
-        <ul>
+      <ul>
+        {details?.boxOffice?.budget?.length > 0 && (
           <li>
             Budget :{" "}
             <span>
@@ -17,6 +17,8 @@ const BoxOfficeItem = ({ details }) => {
               (estimation)
             </span>
           </li>
+        )}
+        {details?.boxOffice?.openingWeekendUSA?.length > 0 && (
           <li>
             Week-end d'ouverture aux États-Unis :{" "}
             <span>
@@ -26,15 +28,19 @@ const BoxOfficeItem = ({ details }) => {
               )}{" "}
             </span>
           </li>
+        )}
+        {details?.boxOffice?.grossUSA?.length > 0 && (
           <li>
             Recette aux États-Unis : <span>{details.boxOffice.grossUSA}</span>
           </li>
+        )}
+        {details?.boxOffice?.cumulativeWorldwideGross?.length > 0 && (
           <li>
             Recette internationale:{" "}
             <span>{details.boxOffice.cumulativeWorldwideGross}</span>
           </li>
-        </ul>
-      )}
+        )}
+      </ul>
     </div>
   );
 };

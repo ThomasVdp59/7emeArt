@@ -35,6 +35,7 @@ const ItemImages = ({ details }) => {
               src={firstImage[0].image}
               alt="anImage"
               key={firstImage[0].image}
+              onError={(e) => (e.target.style = "display: none")}
               onClick={handleClick.bind(this, firstImage[0].image)}
               className={`${
                 lightbox === firstImage[0] ? styles.imageLight : styles.image
@@ -47,6 +48,7 @@ const ItemImages = ({ details }) => {
                 src={image.image}
                 alt="anImage"
                 key={image.image}
+                onError={(e) => (e.target.style = "display: none")}
                 onClick={handleClick.bind(this, image.image)}
                 className={`${
                   lightbox === image ? styles.imageLight : styles.image

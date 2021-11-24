@@ -62,7 +62,7 @@ const Main = ({ details }) => {
 };
 
 Main.propTypes = {
-  details: PropTypes.oneOfType([PropTypes.array, PropTypes.object]).isRequired
+  details: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
 };
 
 export default Main;

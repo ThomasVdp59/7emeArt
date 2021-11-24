@@ -1,0 +1,55 @@
+@use "../../../../styles/variables.scss" as variables;
+
+.cta {
+  display: flex;
+  width: 600px;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 25px;
+  z-index: 1;
+
+  button {
+    border: none;
+    display: flex;
+    align-items: center;
+    height: 68px;
+    padding: 0 3rem;
+  }
+
+  .details {
+    background-color: variables.$black;
+  }
+
+  .trailer {
+    background-color: transparent;
+    border: 2px solid variables.$font-color-white;
+  }
+}
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+
+  iframe {
+    width: 1000px;
+    height: 563px;
+    border: none;
+  }
+}
+
+.modalOverlay {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba($color: #000000, $alpha: 0.95);
+  z-index: 10;
+}

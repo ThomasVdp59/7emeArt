@@ -64,7 +64,7 @@ const MainSubsection = ({ title, details }) => {
           case "Box-Office/Récompenses":
             return (
               <div className={styles.boxOfficeAndRewards}>
-                {details?.boxOffice?.length > 0 && (
+                {details?.boxOffice?.budget?.length > 0 && (
                   <section>
                     <Title value="Box-Office"></Title>
                     <BoxOfficeItem details={details} />
@@ -73,7 +73,7 @@ const MainSubsection = ({ title, details }) => {
                 {details?.awards?.length > 0 && (
                   <section>
                     <Title value="Récompenses"></Title>
-                    <Rewards details={details} />
+                    <Rewards rewards={details.awards} />
                   </section>
                 )}
               </div>

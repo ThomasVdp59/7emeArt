@@ -6,7 +6,13 @@ const Actor = ({ actor }) => {
   return (
     <div className={styles.container}>
       <figure>
-        <img src={actor.image} alt="Actor" />
+        <img
+          src={actor.image}
+          alt="Actor"
+          onError={(e) =>
+            (e.target.src = "https://imdb-api.com/images/384x528/nopicture.jpg")
+          }
+        />
         <figcaption>{actor.name}</figcaption>
       </figure>
     </div>

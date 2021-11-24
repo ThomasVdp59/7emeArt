@@ -13,12 +13,15 @@ const Hero = ({ details }) => {
   const { pathname } = useContext(pathContext);
 
   const backdropFinder = (posters) => {
-    setBackdrop(
-      posters.backdrops.filter(
-        (backdrop) => backdrop.aspectRatio === 1.7777777777777777
-      )[0].link
-    );
-    console.log(backdrop);
+    try {
+      setBackdrop(
+        posters.backdrops.filter(
+          (backdrop) => backdrop.aspectRatio === 1.7777777777777777
+        )[0].link
+      );
+    } catch (error) {
+      console.log("No backdrop");
+    }
   };
 
   useEffect(() => {
@@ -29,8 +32,6 @@ const Hero = ({ details }) => {
       axios
         .get("https://imdb-api.com/en/API/ComingSoon/k_811xf9fl")
         .then((response) => {
-          console.log(response.data.items[0].id);
-          console.log(response.data.items[0].releaseState);
           itemData = response.data.items[0];
           axios
             .get(
@@ -39,16 +40,12 @@ const Hero = ({ details }) => {
                 "/Posters"
             )
             .then((response) => {
-              console.log(response);
               itemData = { ...itemData, ...response.data };
               setItemData(itemData);
             });
         });
-      console.log("Home");
     } else if (pathname === "/films") {
-      console.log("Films");
     } else if (pathname === "/series") {
-      console.log("Series");
     }
   }, [details]);
 

@@ -25,12 +25,11 @@ const Details = () => {
     axios
       .get(url)
       .then((response) => {
-        setData(response.data);
         if (
           response.data.title.length > 0 &&
           response.data.fullTitle.length > 0
         ) {
-          navigate("/notFound");
+          setData(response.data);
         }
       })
       .catch((error) => {
