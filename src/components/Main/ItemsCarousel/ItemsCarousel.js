@@ -14,24 +14,32 @@ const ItemsCarousel = ({ dataNeeded, details }) => {
     if (dataNeeded?.length > 0) {
       switch (dataNeeded) {
         case "mostPopularMovies":
-          axios.get("../database/mostPopularMovies.json").then((response) => {
-            setItemsData(response.data.items);
-          });
+          axios
+            .get("https://imdb-api.com/en/API/MostPopularMovies/k_811xf9fl")
+            .then((response) => {
+              setItemsData(response.data.items);
+            });
           break;
         case "mostPopularShows":
-          axios.get("../database/mostPopularShows.json").then((response) => {
-            setItemsData(response.data.items);
-          });
+          axios
+            .get("https://imdb-api.com/en/API/MostPopularTVs/k_811xf9fl")
+            .then((response) => {
+              setItemsData(response.data.items);
+            });
           break;
         case "comingSoon":
-          axios.get("../database/comingSoon.json").then((response) => {
-            setItemsData(response.data.items);
-          });
+          axios
+            .get("https://imdb-api.com/en/API/ComingSoon/k_811xf9fl")
+            .then((response) => {
+              setItemsData(response.data.items);
+            });
           break;
         case "inTheaters":
-          axios.get("./database/mostPopularMovies.json").then((response) => {
-            setItemsData(response.data.items);
-          });
+          axios
+            .get("https://imdb-api.com/en/API/InTheaters/k_811xf9fl")
+            .then((response) => {
+              setItemsData(response.data.items);
+            });
           break;
         default:
           console.log("Correct needed");

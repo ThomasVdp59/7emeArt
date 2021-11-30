@@ -30,8 +30,6 @@ const TrailerModal = ({ data }) => {
         <iframe
           title="Youtube trailer"
           src={data?.linkEmbed + `?autoplay=false`}
-          width="640"
-          height="360"
           allowFullScreen={true}
           mozallowfullscreen="true"
           webkitallowfullscreen="true"

@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import styles from "./HeaderSearchBar.module.scss";
 import { FiSearch } from "react-icons/fi";
+import { Link } from "react-router-dom";
 
 const HeaderSearchBar = () => {
   const [data, setData] = useState([]);
@@ -69,8 +70,10 @@ const HeaderSearchBar = () => {
           <ul>
             {data.map((data, position) => (
               <li>
-                <img src={data.image} alt="" />
-                {data.title} - {data.description.slice(0, 6)}
+                <Link to={"/details/" + data.id}>
+                  <img src={data.image} alt="" />
+                  {data.title} - {data.description.slice(0, 6)}
+                </Link>
               </li>
             ))}
           </ul>

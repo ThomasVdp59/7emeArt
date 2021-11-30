@@ -32,7 +32,7 @@ const Details = () => {
           setData(response.data);
         }
       })
-      .catch((error) => {
+      .catch(() => {
         navigate("/notFound");
       });
   }, [location]);

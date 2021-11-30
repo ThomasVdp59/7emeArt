@@ -27,10 +27,15 @@ const Hero = ({ details }) => {
   useEffect(() => {
     if (details) {
       setItemData(details);
-    } else if (pathname === "/" || pathname === "/news") {
+    } else {
       let itemData;
+      let apiCallCategory;
+      if (pathname === "/" || pathname === "/news") {
+        apiCallCategory = "ComingSoon";
+      } else if (pathname === "/films") apiCallCategory = "MostPopularMovies";
+      else if (pathname === "/series") apiCallCategory = "MostPopularTVs";
       axios
-        .get("https://imdb-api.com/en/API/ComingSoon/k_811xf9fl")
+        .get("https://imdb-api.com/en/API/" + apiCallCategory + "/k_811xf9fl")
         .then((response) => {
           itemData = response.data.items[0];
           axios
@@ -44,8 +49,6 @@ const Hero = ({ details }) => {
               setItemData(itemData);
             });
         });
-    } else if (pathname === "/films") {
-    } else if (pathname === "/series") {
     }
   }, [details]);
 
