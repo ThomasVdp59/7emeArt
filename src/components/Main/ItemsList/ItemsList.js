@@ -4,9 +4,11 @@ import styles from "./ItemsList.module.scss";
 import Item from "../Item/Item.js";
 import axios from "axios";
 import ReactPaginate from "react-paginate";
+import Loading from "../../Loading/Loading.js";
 
 const ItemsList = ({ listType, dataNeeded }) => {
   const numberOfItemsOnPage = listType === "Top" ? 18 : 6;
+  const [isLoading, setLoading] = useState(true);
   const [itemsToShow, setItemsToShow] = useState([]);
   const [news, setNews] = useState([]);
   const [pageCount, setPageCount] = useState(0);
@@ -16,15 +18,52 @@ const ItemsList = ({ listType, dataNeeded }) => {
 
   useEffect(() => {
     if (dataNeeded === "topMovies") {
-      axios.get("../database/top250Movies.json").then((response) => {
-        setItemsToShow(response.data.items);
-      });
+      axios
+        .get("https://imdb-api.com/en/API/Top250Movies/k_811xf9fl")
+        .then((response) => {
+          setItemsToShow(response.data.items);
+          setLoading(false);
+        });
     }
     if (dataNeeded === "topShows") {
-      axios.get("../database/top250Shows.json").then((response) => {
-        setItemsToShow(response.data.items);
-      });
+      axios
+        .get("https://imdb-api.com/en/API/Top250TVs/k_811xf9fl")
+        .then((response) => {
+          setItemsToShow(response.data.items);
+          setLoading(false);
+        });
     }
+    if (dataNeeded === "NewsAll") {
+      /* axios
+        .get(
+          "http://api.mediastack.com/v1/news?access_key=00ad828caa430c802b80e14db8426217&languages=fr&keywords=series marvel netflix cinema movies"
+        )
+        .then((response) => {
+          setItemsToShow(response.data.data);
+          setLoading(false);
+        }); */
+    }
+    if (dataNeeded === "NewsMovies") {
+      /* axios
+        .get(
+          "http://api.mediastack.com/v1/news?access_key=00ad828caa430c802b80e14db8426217&languages=fr&keywords=marvel cinema movies"
+        )
+        .then((response) => {
+          setItemsToShow(response.data.data);
+          setLoading(false);
+        }); */
+    }
+    if (dataNeeded === "NewsShows") {
+      /* axios
+        .get(
+          "http://api.mediastack.com/v1/news?access_key=00ad828caa430c802b80e14db8426217&languages=fr&keywords=series marvel netflix"
+        )
+        .then((response) => {
+          setItemsToShow(response.data.data);
+          setLoading(false);
+        }); */
+    }
+    return () => {};
   }, [dataNeeded]);
 
   useEffect(() => {
@@ -45,23 +84,29 @@ const ItemsList = ({ listType, dataNeeded }) => {
   };
 
   return (
-    <div className={styles.container}>
-      <div className={styles.newsContainer}>
-        {news.map((data, index) => (
-          <Item key={index} type={listType} data={data} />
-        ))}
-      </div>
-      <ReactPaginate
-        pageCount={pageCount}
-        onPageChange={handlePageClick}
-        containerClassName={styles.paginationContainer}
-        activeLinkClassName={styles.pageSelected}
-        pageClassName={styles.page}
-        breakClassName={styles.page}
-        previousClassName={styles.commandPages}
-        nextClassName={styles.commandPages}
-      />
-    </div>
+    <React.Fragment>
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <div className={styles.container}>
+          <div className={styles.newsContainer}>
+            {news?.map((data, index) => (
+              <Item key={index} type={listType} data={data} />
+            ))}
+          </div>
+          <ReactPaginate
+            pageCount={pageCount}
+            onPageChange={handlePageClick}
+            containerClassName={styles.paginationContainer}
+            activeLinkClassName={styles.pageSelected}
+            pageClassName={styles.page}
+            breakClassName={styles.page}
+            previousClassName={styles.commandPages}
+            nextClassName={styles.commandPages}
+          />
+        </div>
+      )}
+    </React.Fragment>
   );
 };
 ItemsList.propTypes = {

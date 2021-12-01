@@ -20,11 +20,11 @@ const MainSubsection = ({ title, details }) => {
       {(() => {
         switch (title) {
           case "Actualités films et séries":
-            return <ItemsList listType="News" />;
+            return <ItemsList listType="News" dataNeeded="NewsAll" />;
           case "Actualités films":
-            return <ItemsList listType="News" />;
+            return <ItemsList listType="News" dataNeeded="NewsMovies" />;
           case "Actualités séries":
-            return <ItemsList listType="News" />;
+            return <ItemsList listType="News" dataNeeded="NewsShows" />;
           case "Actuellement au cinéma":
             return <ItemsCarousel dataNeeded="inTheaters" />;
           case "Films les plus populaires":

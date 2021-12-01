@@ -5,7 +5,7 @@ import styles from "./Item.module.scss";
 import img from "../../../assets/images/newsexemple.png";
 
 const Item = ({ data, type }) => {
-  if (data) {
+  if (data && type !== "News") {
     if (data.image === "https://imdb-api.com/images/128x176/nopicture.jpg") {
       data.image = "https://imdb-api.com/images/384x528/nopicture.jpg";
     }
@@ -32,40 +32,40 @@ const Item = ({ data, type }) => {
 
   if (type === "Top" || type === "Slide") {
     return (
-      <div
-        className={type === "Top" ? styles.containerTop : styles.containerSlide}
-        style={{
-          backgroundImage: `url(${data.image})`
-        }}
-      >
-        {type === "Top" && <span className={styles.rank}>{data.rank}</span>}
-        <div className={styles.textContainer}>
-          <Link to={"/details/" + data.id}>
+      <Link to={"/details/" + data.id}>
+        <div
+          className={
+            type === "Top" ? styles.containerTop : styles.containerSlide
+          }
+          style={{
+            backgroundImage: `url(${data.image})`
+          }}
+        >
+          {type === "Top" && <span className={styles.rank}>{data.rank}</span>}
+          <div className={styles.textContainer}>
             <h3>{data.title}</h3>
-          </Link>
-          {data.imDbRating ? <span>note Imdb : {data.imDbRating}</span> : ""}
-          {data.metacriticRating ? (
-            <span>note Imdb : {data.metacriticRating}</span>
-          ) : (
-            ""
-          )}
-          {data.metacriticRating || data.imDbRating ? (
-            ""
-          ) : (
-            <span>Pas encore noté</span>
-          )}
+            {data.imDbRating ? <span>note Imdb : {data.imDbRating}</span> : ""}
+            {data.metacriticRating ? (
+              <span>note Imdb : {data.metacriticRating}</span>
+            ) : (
+              ""
+            )}
+            {data.metacriticRating || data.imDbRating ? (
+              ""
+            ) : (
+              <span>Pas encore noté</span>
+            )}
+          </div>
         </div>
-      </div>
+      </Link>
     );
   } else if (type === "News") {
     return (
-      <div className={styles.container}>
-        <img src={img} alt="newsThumbnail" />
-        <h3>
-          "Spawn : le projet maudit bouge encore et a trouvé son nouveau
-          scénariste"
-        </h3>
-        <span>par Niki Caro</span>
+      <div className={styles.newsContainer}>
+        <a href={data.url} target="_blank">
+          <h3>{data.title}</h3>
+        </a>
+        <span>par {data.source}</span>
       </div>
     );
   }

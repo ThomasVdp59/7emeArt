@@ -1,14 +1,14 @@
 @use "../../../styles/variables.scss" as variables;
 .newsContainer {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
   column-gap: 1.5rem;
 }
 
 .paginationContainer {
   display: flex;
-  margin: 0 auto;
+  margin: 50px auto;
   justify-content: center;
 
   .page {

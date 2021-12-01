@@ -1,4 +1,5 @@
 @use "../../styles/variables.scss" as variables;
+@use "../../styles/mixins.scss" as mixins;
 
 .container {
   width: 80vw;
@@ -7,18 +8,29 @@
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  padding: 0 10%;
+  padding: 4% 10%;
   margin-top: 100px;
 
   .footerMain {
-    height: 150px;
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
+    @include mixins.md {
+      height: 150px;
+      flex-direction: row;
+    }
 
     &Infos {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+
+      &Social {
+        margin-top: 1rem;
+        @include mixins.md {
+          margin: 0;
+        }
+      }
 
       &Brand {
         font-family: variables.$font-family-serif;
@@ -34,18 +46,40 @@
     &Nav {
       display: flex;
       justify-content: space-evenly;
-      width: 60%;
+      flex-direction: column;
+      width: 100%;
+
+      @include mixins.md {
+        flex-direction: row;
+        width: 60%;
+      }
 
       &Group {
+        display: flex;
+        flex-direction: column;
+        margin-top: 1rem;
+        @include mixins.md {
+        }
         &Links {
-          height: 150px;
           display: flex;
-          flex-direction: column;
-          justify-content: space-evenly;
+          flex-direction: row;
+          @include mixins.md {
+            justify-content: space-evenly;
+            height: 150px;
+            flex-direction: column;
+          }
         }
 
         & span {
-          font-size: variables.$font-size-footer;
+          font-size: calc(variables.$font-size-footer);
+          display: flex;
+          align-items: center;
+          padding-right: 1rem;
+          @include mixins.md {
+            padding: 0;
+            flex-direction: column;
+            align-items: flex-start;
+          }
         }
       }
     }
@@ -61,11 +95,27 @@
   .footerSub {
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
+    text-align: center;
+
+    @include mixins.lg {
+      flex-direction: row;
+      text-align: start;
+    }
 
     &Headings {
-      width: 500px;
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: space-around;
+      padding-top: 5%;
+
+      @include mixins.lg {
+        width: 30rem;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-top: 0;
+      }
     }
   }
 

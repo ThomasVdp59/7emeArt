@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Hero from "../components/Hero/Hero.js";
 import Main from "../components/Main/Main.js";
+import Loading from "../components/Loading/Loading.js";
 import Footer from "../components/Footer/Footer.js";
 import { useNavigate, useLocation } from "react-router-dom";
 import { pathContext } from "../contexts/pathContext";
@@ -39,12 +40,16 @@ const Details = () => {
 
   return (
     <pathContext.Provider value={location}>
-      {data?.id?.length > 0 && (
+      {data?.id?.length > 0 ? (
         <React.Fragment>
           <Hero details={data} />
           <Main details={data} />
           <Footer />
         </React.Fragment>
+      ) : (
+        <div style={{ height: "100vh" }}>
+          <Loading />
+        </div>
       )}
     </pathContext.Provider>
   );

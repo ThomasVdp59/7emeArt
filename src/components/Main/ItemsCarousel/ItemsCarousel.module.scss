@@ -1,4 +1,5 @@
 @use "../../../styles/variables.scss" as variables;
+@use "../../../styles/mixins.scss" as mixins;
 
 .container {
   display: flex;
@@ -15,15 +16,31 @@
   }
 
   div:first-of-type svg {
-    left: -3%;
     top: 50%;
     transform: translateY(-50%);
     z-index: 15;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+
+    @include mixins.sm {
+      left: -5%;
+    }
+    @include mixins.lg {
+      left: -3%;
+    }
   }
   div:last-of-type svg {
-    right: -3%;
     top: 50%;
     transform: translateY(-50%);
     z-index: 15;
+
+    @include mixins.sm {
+      right: -5%;
+    }
+    @include mixins.lg {
+      right: -3%;
+    }
   }
 }

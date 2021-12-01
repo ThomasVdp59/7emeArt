@@ -17,6 +17,7 @@ function App() {
         <Route path="/news" element={<News />} />
         <Route path="/details/:itemId" element={<Details />} />
         <Route path="/notFound" element={<NotFound />} />
+        <Route path="*" exact={true} element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );

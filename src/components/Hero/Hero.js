@@ -5,9 +5,11 @@ import Header from "../Header/Header.js";
 import HeroMain from "./HeroMain/HeroMain";
 import { pathContext } from "../../contexts/pathContext";
 import axios from "axios";
+import Loading from "../Loading/Loading.js";
 
 const Hero = ({ details }) => {
   const [itemData, setItemData] = useState([]);
+  const [isLoading, setLoading] = useState(true);
   const [backdrop, setBackdrop] = useState("");
   const [error, setError] = useState("");
   const { pathname } = useContext(pathContext);
@@ -26,6 +28,7 @@ const Hero = ({ details }) => {
 
   useEffect(() => {
     if (details) {
+      setLoading(false);
       setItemData(details);
     } else {
       let itemData;
@@ -45,6 +48,7 @@ const Hero = ({ details }) => {
                 "/Posters"
             )
             .then((response) => {
+              setLoading(false);
               itemData = { ...itemData, ...response.data };
               setItemData(itemData);
             });
@@ -61,27 +65,35 @@ const Hero = ({ details }) => {
 
   return (
     <React.Fragment>
-      <React.Fragment>
-        {pathname.startsWith("/details") && details.length > 0 && (
-          <div className={`${styles.container} ${styles.detailsContainer}`}>
-            <Header />
-            <HeroMain data={details} />
-          </div>
-        )}
-      </React.Fragment>
-      <React.Fragment>
-        {itemData.id !== null && (
-          <div
-            className={styles.container}
-            style={{
-              backgroundImage: `url(${backdrop})`
-            }}
-          >
-            <Header />
-            <HeroMain data={itemData} />
-          </div>
-        )}
-      </React.Fragment>
+      {isLoading ? (
+        <div style={{ height: "100vh" }}>
+          <Loading />
+        </div>
+      ) : (
+        <React.Fragment>
+          <React.Fragment>
+            {pathname.startsWith("/details") && details.length > 0 && (
+              <div className={`${styles.container} ${styles.detailsContainer}`}>
+                <Header />
+                <HeroMain data={details} />
+              </div>
+            )}
+          </React.Fragment>
+          <React.Fragment>
+            {itemData.id !== null && (
+              <div
+                className={styles.container}
+                style={{
+                  backgroundImage: `url(${backdrop})`
+                }}
+              >
+                <Header />
+                <HeroMain data={itemData} />
+              </div>
+            )}
+          </React.Fragment>
+        </React.Fragment>
+      )}
     </React.Fragment>
   );
 };

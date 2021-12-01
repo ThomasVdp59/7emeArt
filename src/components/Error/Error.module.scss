@@ -1,3 +1,6 @@
+@use "../../styles/variables.scss" as variables;
+@use "../../styles/mixins.scss" as mixins;
+
 .container {
   width: 100vw;
   height: 100vh;
@@ -5,4 +8,20 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  h1,
+  h2,
+  h3 {
+    margin-left: 0;
+    padding: 0 15%;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: calc(variables.$font-size-hero-heading - 1rem);
+
+    @include mixins.md {
+      font-size: variables.$font-size-hero-heading;
+    }
+  }
 }

@@ -3,11 +3,13 @@ import PropTypes from "prop-types";
 import styles from "./ItemsCarousel.module.scss";
 import Item from "../Item/Item";
 import { FiArrowLeftCircle, FiArrowRightCircle } from "react-icons/fi";
-import Glide from "@glidejs/glide";
+import Glide, { Breakpoints } from "@glidejs/glide";
 import axios from "axios";
+import Loading from "../../Loading/Loading.js";
 
 const ItemsCarousel = ({ dataNeeded, details }) => {
   const [itemsData, setItemsData] = useState([]);
+  const [isLoading, setLoading] = useState(true);
   const viewsNumber = 7;
 
   useEffect(() => {
@@ -17,6 +19,7 @@ const ItemsCarousel = ({ dataNeeded, details }) => {
           axios
             .get("https://imdb-api.com/en/API/MostPopularMovies/k_811xf9fl")
             .then((response) => {
+              setLoading(false);
               setItemsData(response.data.items);
             });
           break;
@@ -24,6 +27,7 @@ const ItemsCarousel = ({ dataNeeded, details }) => {
           axios
             .get("https://imdb-api.com/en/API/MostPopularTVs/k_811xf9fl")
             .then((response) => {
+              setLoading(false);
               setItemsData(response.data.items);
             });
           break;
@@ -31,6 +35,7 @@ const ItemsCarousel = ({ dataNeeded, details }) => {
           axios
             .get("https://imdb-api.com/en/API/ComingSoon/k_811xf9fl")
             .then((response) => {
+              setLoading(false);
               setItemsData(response.data.items);
             });
           break;
@@ -38,6 +43,7 @@ const ItemsCarousel = ({ dataNeeded, details }) => {
           axios
             .get("https://imdb-api.com/en/API/InTheaters/k_811xf9fl")
             .then((response) => {
+              setLoading(false);
               setItemsData(response.data.items);
             });
           break;
@@ -51,6 +57,7 @@ const ItemsCarousel = ({ dataNeeded, details }) => {
   useEffect(() => {
     let sliders;
     if (details?.similars?.length > 0) {
+      setLoading(false);
       setItemsData(details.similars);
       sliders = document.querySelectorAll(".glide");
     } else if (itemsData) {
@@ -58,60 +65,72 @@ const ItemsCarousel = ({ dataNeeded, details }) => {
     }
     if (itemsData.length > 0) {
       sliders.forEach((item) => {
-        if (itemsData.length > viewsNumber) {
-          new Glide(item, {
-            type: "slider",
-            startAt: 0,
-            perView: viewsNumber,
-            dragDistance: 0,
-            rewind: true
-          }).mount();
-        } else {
-          new Glide(item, {
-            type: "slider",
-            startAt: 0,
-            perView: viewsNumber,
-            swipeThreshold: false,
-            dragThreshold: false,
-            rewind: true
-          }).mount();
-        }
+        new Glide(item, {
+          type: "slider",
+          startAt: 0,
+          perView: viewsNumber,
+          swipeThreshold: false,
+          dragThreshold: false,
+          rewind: true,
+          breakpoints: {
+            576: {
+              perView: 1
+            },
+            768: {
+              perView: 2
+            },
+            1100: {
+              perView: 3
+            },
+            1300: {
+              perView: 4
+            },
+            1800: {
+              perView: 5
+            },
+            5000: {
+              perView: 7
+            }
+          }
+        }).mount();
       });
     }
   }, [details, itemsData]);
 
   return (
-    <div
-      className={`glide${dataNeeded?.length > 0 ? dataNeeded : ""}
-        ${styles.container}`}
-    >
-      <React.Fragment>
-        {itemsData.length !== viewsNumber && (
-          <div data-glide-el="controls">
-            <FiArrowLeftCircle data-glide-dir="<" />
-          </div>
-        )}
+    <React.Fragment>
+      {isLoading ? (
+        <Loading />
+      ) : (
         <div
-          className={`glide__track ${styles.carousel}`}
-          data-glide-el="track"
+          className={`glide${dataNeeded?.length > 0 ? dataNeeded : ""}
+          ${styles.container}`}
         >
-          <ul className="glide__slides">
-            {itemsData?.length > 0 &&
-              itemsData.map((data, position) => (
-                <li className="glide__slide" key={position}>
-                  {" "}
-                  <Item type="Slide" data={data} />
-                </li>
-              ))}
-          </ul>
+          <React.Fragment>
+            <div data-glide-el="controls">
+              <FiArrowLeftCircle data-glide-dir="<" />
+            </div>
+            <div
+              className={`glide__track ${styles.carousel}`}
+              data-glide-el="track"
+            >
+              <ul className="glide__slides">
+                {itemsData?.length > 0 &&
+                  itemsData.map((data, position) => (
+                    <li className="glide__slide" key={position}>
+                      {" "}
+                      <Item type="Slide" data={data} />
+                    </li>
+                  ))}
+              </ul>
+            </div>
+            <div data-glide-el="controls">
+              <FiArrowRightCircle data-glide-dir=">" />
+            </div>
+          </React.Fragment>
         </div>
-        {itemsData.length !== viewsNumber && (
-          <div data-glide-el="controls">
-            <FiArrowRightCircle data-glide-dir=">" />
-          </div>
-        )}
-      </React.Fragment>
-    </div>
+      )}
+    </React.Fragment>
   );
 };
 

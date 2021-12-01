@@ -1,0 +1,13 @@
+@use "../../styles/variables.scss" as variables;
+
+.loadingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: inherit;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background-color: variables.$background-black;
+}

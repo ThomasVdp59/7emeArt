@@ -1,5 +1,29 @@
 @use "../../../styles/variables.scss" as variables;
 
+.newsContainer {
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  span {
+    padding-top: 10px;
+    width: fit-content;
+    color: variables.$font-color-gray;
+    font-size: variables.$font-size-footer-headings;
+    font-family: variables.$font-family-sans-serif-text;
+    font-weight: normal;
+    text-transform: initial;
+  }
+  a {
+    width: fit-content;
+  }
+  h3 {
+    display: inline;
+    width: fit-content;
+  }
+}
+
 .container {
   width: 280px;
   height: 380px;
@@ -31,6 +55,7 @@
   -moz-border-radius: 15px;
   -ms-border-radius: 15px;
   -o-border-radius: 15px;
+  margin: 0 auto;
 }
 
 .containerTop {
@@ -82,6 +107,7 @@
     display: inline-block;
     text-overflow: ellipsis;
   }
+
   span {
     width: 150px;
     font-weight: 400;

@@ -21,13 +21,11 @@ const HeaderSearchBar = () => {
       searchContainer.current &&
       !searchContainer.current.contains(e.target)
     ) {
-      console.log("ouiiii");
       setListVisible(false);
     } else if (
       searchContainer.current &&
       searchContainer.current.contains(e.target)
     ) {
-      console.log("nonnnn");
       setListVisible(true);
     }
   };
