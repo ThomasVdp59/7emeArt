@@ -9,9 +9,15 @@ const Rewards = ({ rewards }) => {
     const fields = ["nomination", "win", "oscar"];
     let arrayToReturnToState = [];
     fields.forEach((field) => {
-      if (rewards.toLowerCase().indexOf(" " + field) !== -1) {
-        const arraySplit = rewards
-          .slice(0, rewards.toLowerCase().indexOf(" " + field))
+      let reward = rewards;
+      if (reward.toLowerCase().indexOf(" " + field) !== -1) {
+        if (reward.toLowerCase().indexOf("awards") !== -1) {
+          console.log("oui");
+          reward = reward.replace("Awards", "");
+        }
+        console.log("no");
+        const arraySplit = reward
+          .slice(0, reward.toLowerCase().indexOf(" " + field))
           .split(" ");
         arrayToReturnToState.push(arraySplit[arraySplit.length - 1]);
       }

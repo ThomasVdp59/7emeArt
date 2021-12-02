@@ -1,8 +1,11 @@
 @use "../../../styles/variables.scss" as variables;
+@use "../../../styles/mixins.scss" as mixins;
+
 .newsContainer {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
   column-gap: 1.5rem;
 }
 

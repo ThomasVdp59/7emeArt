@@ -73,7 +73,7 @@ const ItemsCarousel = ({ dataNeeded, details }) => {
           dragThreshold: false,
           rewind: true,
           breakpoints: {
-            576: {
+            535: {
               perView: 1
             },
             768: {
@@ -110,10 +110,7 @@ const ItemsCarousel = ({ dataNeeded, details }) => {
             <div data-glide-el="controls">
               <FiArrowLeftCircle data-glide-dir="<" />
             </div>
-            <div
-              className={`glide__track ${styles.carousel}`}
-              data-glide-el="track"
-            >
+            <div className={`glide__track`} data-glide-el="track">
               <ul className="glide__slides">
                 {itemsData?.length > 0 &&
                   itemsData.map((data, position) => (
