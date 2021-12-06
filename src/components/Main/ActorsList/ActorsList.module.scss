@@ -3,8 +3,4 @@
 .container {
   display: flex;
   flex-wrap: wrap;
-
-  & > div:nth-last-child(-n + 3) figure {
-    margin: 0 !important;
-  }
 }

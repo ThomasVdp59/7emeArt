@@ -13,8 +13,8 @@ import ItemImages from "../ItemImages/ItemImages";
 const MainSubsection = ({ title, details }) => {
   return (
     <div className={styles.container}>
-      {title !== "Box-Office/Récompenses" &&
-        title !== "Films similaires" &&
+      {title !== "Chiffres/Récompenses" &&
+        title !== "Similaires" &&
         title !== "Acteurs principaux" &&
         title !== "Images" && <Title value={title}></Title>}
       {(() => {
@@ -33,7 +33,7 @@ const MainSubsection = ({ title, details }) => {
             return <ItemsCarousel dataNeeded="mostPopularShows" />;
           case "Prochaines sorties":
             return <ItemsCarousel dataNeeded="comingSoon" />;
-          case "Films similaires":
+          case "Similaires":
             if (details?.similars?.length > 0) {
               return (
                 <React.Fragment>
@@ -61,12 +61,12 @@ const MainSubsection = ({ title, details }) => {
             } else {
               return null;
             }
-          case "Box-Office/Récompenses":
+          case "Chiffres/Récompenses":
             return (
               <div className={styles.boxOfficeAndRewards}>
                 {details?.boxOffice?.budget?.length > 0 && (
                   <section>
-                    <Title value="Box-Office"></Title>
+                    <Title value="Chiffres"></Title>
                     <BoxOfficeItem details={details} />
                   </section>
                 )}

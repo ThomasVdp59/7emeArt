@@ -11,15 +11,12 @@ const Rewards = ({ rewards }) => {
     fields.forEach((field) => {
       let reward = rewards;
       if (reward.toLowerCase().indexOf(" " + field) !== -1) {
-        if (reward.toLowerCase().indexOf("awards") !== -1) {
-          console.log("oui");
-          reward = reward.replace("Awards", "");
-        }
-        console.log("no");
         const arraySplit = reward
           .slice(0, reward.toLowerCase().indexOf(" " + field))
           .split(" ");
-        arrayToReturnToState.push(arraySplit[arraySplit.length - 1]);
+        arrayToReturnToState.push(
+          arraySplit[arraySplit.length - 1].replace(/\D/g, "")
+        );
       }
     });
     setAwards(arrayToReturnToState);

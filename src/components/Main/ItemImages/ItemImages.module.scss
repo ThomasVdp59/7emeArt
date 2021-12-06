@@ -1,4 +1,5 @@
 @use "../../../styles/variables.scss" as variables;
+@use "../../../styles/mixins.scss" as mixins;
 
 .container {
   display: flex;
@@ -67,15 +68,19 @@
   }
 
   & .mainImage .image {
-    width: 300px;
-    height: 300px;
     object-fit: cover;
     object-position: center;
+    width: 79vw;
+
+    @include mixins.sm {
+      width: 300px;
+      height: 300px;
+    }
   }
 
   img {
     font-size: 0;
-    width: 149px;
+    width: 49%;
     height: 149px;
     object-fit: cover;
     object-position: center;
@@ -85,5 +90,9 @@
     -ms-transition: 0.4s;
     -o-transition: 0.4s;
     cursor: pointer;
+
+    @include mixins.sm {
+      width: 300px;
+    }
   }
 }

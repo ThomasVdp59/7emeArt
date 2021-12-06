@@ -42,9 +42,9 @@ const Main = ({ details }) => {
       case pathname.startsWith("/details"):
         setSections([
           "Acteurs principaux",
-          "Box-Office/Récompenses",
+          "Chiffres/Récompenses",
           "Images",
-          "Films similaires"
+          "Similaires"
         ]);
         break;
       default:

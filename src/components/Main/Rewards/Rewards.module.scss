@@ -1,17 +1,29 @@
 @use "../../../styles/variables.scss" as variables;
+@use "../../../styles/mixins.scss" as mixins;
 
 .container {
   .rewardsList {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    @include mixins.sm {
+      flex-direction: row;
+    }
     li {
       text-transform: uppercase;
       font-weight: bold;
       text-align: center;
-      border-right: 0.5px solid rgba(255, 255, 255, 0.301);
+      border-bottom: 0.5px solid rgba(255, 255, 255, 0.301);
       padding: 1rem 1.5rem;
+      @include mixins.sm {
+        border-bottom: 0;
+        border-right: 0.5px solid rgba(255, 255, 255, 0.301);
+      }
       &:nth-last-child(-n + 1) {
-        border-right: none;
+        border-bottom: none;
+        @include mixins.sm {
+          border-right: none;
+        }
       }
       span {
         font-size: 2.5rem;

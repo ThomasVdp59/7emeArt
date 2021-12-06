@@ -15,8 +15,6 @@ const HeaderSearchBar = () => {
   }, []);
 
   const handleButtonClick = (e) => {
-    console.log(searchContainer);
-    console.log(e.target);
     if (
       searchContainer.current &&
       !searchContainer.current.contains(e.target)
@@ -62,7 +60,7 @@ const HeaderSearchBar = () => {
         <input
           type="text"
           onChange={onChangeHandler}
-          placeholder="Rechercher un film, une série, un genre..."
+          placeholder="Rechercher un film, une série..."
         />
         {data?.length > 0 && isListVisible && (
           <ul>
