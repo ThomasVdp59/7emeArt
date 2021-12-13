@@ -8,7 +8,7 @@ const Error = () => {
 
   useEffect(() => {
     if (countdown === 0) {
-      /* navigate("/"); */
+      navigate("/");
     }
     setInterval(() => {
       setCountdown(countdown - 1);

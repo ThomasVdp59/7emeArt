@@ -1,10 +1,15 @@
 @use "../../../styles/variables.scss" as variables;
+@use "../../../styles/mixins.scss" as mixins;
 
 .container {
   width: 330px;
   margin: 0 auto;
-  display: flex;
+  display: none;
   align-items: center;
+
+  @include mixins.md {
+    display: flex;
+  }
 
   svg {
     font-size: variables.$font-size-headings;

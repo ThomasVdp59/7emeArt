@@ -81,7 +81,7 @@ const HeroMain = ({ data }) => {
               <button className={styles.details}>
                 <Link to={"/details/" + data.id}>Plus de détails</Link>
               </button>
-              {data?.trailer?.linkEmbed?.length > 0 && (
+              {data?.trailer?.link?.length > 0 && (
                 <TrailerModal data={data?.trailer} />
               )}
             </div>

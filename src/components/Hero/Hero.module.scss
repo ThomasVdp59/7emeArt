@@ -1,12 +1,18 @@
+@use "../../styles/mixins.scss" as mixins;
+
 .container {
   width: 100vw;
-  height: 100vh;
+  height: auto;
   background: no-repeat url(../../assets/images/herobackgroundexemple.png);
   background-position: center;
   background-size: cover;
   display: flex;
   flex-direction: column;
   overflow: hidden;
+
+  @include mixins.lg {
+    height: 100vh;
+  }
 
   &::before {
     content: "";

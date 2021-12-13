@@ -1,12 +1,17 @@
 @use "../../../../styles/variables.scss" as variables;
+@use "../../../../styles/mixins.scss" as mixins;
 
 .cta {
   display: flex;
-  width: 600px;
+  width: 100%;
   justify-content: space-between;
   align-items: center;
-  margin-top: 25px;
+  margin: 25px 0;
   z-index: 1;
+
+  @include mixins.md {
+    width: 600px;
+  }
 
   button {
     border: none;
@@ -26,18 +31,37 @@
     border: 2px solid variables.$font-color-white;
   }
 }
+.link {
+  background-color: transparent;
+  border: 2px solid variables.$font-color-white;
+  height: 68px;
+  padding: 0 1rem;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  text-align: center;
+  margin: 25px 0;
+}
 
 .modal {
+  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 10;
 
-  iframe {
-    width: 854px;
-    height: 576px;
+  .iframe {
     margin: 0 auto;
     border: none;
+    width: 100%;
+    height: 100vh;
+    max-width: 854px;
+    max-height: 480px;
+    .video-player-frame.video-player-embedded {
+      padding: 50px;
+    }
   }
 }
 

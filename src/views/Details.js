@@ -17,8 +17,8 @@ const Details = () => {
     const id = pathname.slice(pathname.lastIndexOf("/") + 1, pathname.length);
     return id;
   };
-
   useEffect(() => {
+    window.scrollTo(0, 0);
     const url =
       "https://imdb-api.com/fr/API/Title/k_811xf9fl/" +
       getIdWithUrl(location) +

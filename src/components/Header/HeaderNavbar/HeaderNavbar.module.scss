@@ -1,9 +1,72 @@
+@use "../../../styles/mixins.scss" as mixins;
+@use "../../../styles/variables.scss" as variables;
+
 .container {
   width: 700px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 2;
+
+  .fullLinks {
+    display: none;
+    width: inherit;
+
+    @include mixins.md {
+      display: flex;
+      justify-content: space-evenly;
+    }
+  }
+
+  .burgerMenu {
+    display: initial;
+    .btn {
+      width: 20px;
+      background-color: red;
+      height: 20px;
+    }
+    .menu {
+      background: black;
+      top: 0;
+      .itemList {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: auto;
+
+        a,
+        svg {
+          margin: 1rem auto;
+          text-align: center;
+        }
+      }
+    }
+
+    svg {
+      cursor: pointer;
+      font-size: variables.$font-size-headings;
+      transition: 0.2s ease;
+      -webkit-transition: 0.2s ease;
+      -moz-transition: 0.2s ease;
+      -ms-transition: 0.2s ease;
+      -o-transition: 0.2s ease;
+    }
+    svg:hover {
+      transform: rotate(90deg);
+      -webkit-transform: rotate(90deg);
+      -moz-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+      -o-transform: rotate(90deg);
+    }
+
+    @include mixins.md {
+      display: none;
+    }
+
+    .bm-overlay {
+      background: red;
+    }
+  }
 }
 
 .logo {

@@ -2,8 +2,10 @@
 @use "../../../styles/mixins.scss" as mixins;
 
 .container {
-  width: 450px;
-
+  width: 100%;
+  @include mixins.sm {
+    width: 450px;
+  }
   figure {
     display: flex;
     align-items: center;
